@@ -1,0 +1,73 @@
+name: CI/CD Production Deployment Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test_and_build:
+    name: Run Tests & Verify Build
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_DB: crm_becas_test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgrespassword
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install Backend Dependencies & Run Tests
+        run: |
+          cd backend
+          npm ci
+          npm test
+        env:
+          NODE_ENV: test
+          DB_HOST: localhost
+          DB_PORT: 5432
+          DB_NAME_TEST: crm_becas_test
+          DB_USER: postgres
+          DB_PASSWORD: postgrespassword
+          JWT_SECRET: test_jwt_secret_key_2026
+
+      - name: Install Frontend Dependencies & Build SPA
+        run: |
+          cd frontend
+          npm ci
+          npm run build
+
+  deploy_to_production:
+    name: Deploy to Ubuntu Production VM
+    needs: test_and_build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Execute Remote SSH Deployment Script
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd ${{ secrets.APP_PATH }}
+            bash deploy/deploy.sh

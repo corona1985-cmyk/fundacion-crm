@@ -1,0 +1,400 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/models/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/models</a> index.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">98.48% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>65/66</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">50% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>2/4</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">98.48% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>65/66</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { Sequelize } = require('sequelize');
+const configEnv = require('../config/database');
+&nbsp;
+const env = process.env.NODE_ENV || <span class="branch-1 cbranch-no" title="branch not covered" >'development';</span>
+const config = configEnv[env];
+&nbsp;
+let sequelize;
+<span class="missing-if-branch" title="if path not taken" >I</span>if (config.use_env_variable) {
+<span class="cstat-no" title="statement not covered" >  sequelize = new Sequelize(process.env[config.use_env_variable], config);</span>
+} else {
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
+}
+&nbsp;
+const db = {};
+&nbsp;
+// Module 1 Models
+db.Persona = require('./Persona')(sequelize);
+db.Usuario = require('./Usuario')(sequelize);
+db.Auditoria = require('./Auditoria')(sequelize);
+&nbsp;
+// Module 2 Models
+db.Universidad = require('./Universidad')(sequelize);
+db.Carrera = require('./Carrera')(sequelize);
+db.Materia = require('./Materia')(sequelize);
+db.CicloAcademico = require('./CicloAcademico')(sequelize);
+db.Becario = require('./Becario')(sequelize);
+db.MateriaCursada = require('./MateriaCursada')(sequelize);
+db.Documento = require('./Documento')(sequelize);
+&nbsp;
+// Module 3 Models
+db.Padrino = require('./Padrino')(sequelize);
+db.InstitucionPublica = require('./InstitucionPublica')(sequelize);
+db.Aporte = require('./Aporte')(sequelize);
+db.BecarioPadrino = require('./BecarioPadrino')(sequelize);
+&nbsp;
+// Module 4 Models
+db.Pago = require('./Pago')(sequelize);
+db.Presupuesto = require('./Presupuesto')(sequelize);
+db.GastoAdministrativo = require('./GastoAdministrativo')(sequelize);
+&nbsp;
+// Module 1 Associations
+db.Persona.hasOne(db.Usuario, { foreignKey: 'persona_id', as: 'usuario', onDelete: 'CASCADE' });
+db.Usuario.belongsTo(db.Persona, { foreignKey: 'persona_id', as: 'persona' });
+&nbsp;
+db.Usuario.hasMany(db.Auditoria, { foreignKey: 'usuario_id', as: 'auditorias', onDelete: 'SET NULL' });
+db.Auditoria.belongsTo(db.Usuario, { foreignKey: 'usuario_id', as: 'usuario' });
+&nbsp;
+// Module 2 Associations
+db.Universidad.hasMany(db.Carrera, { foreignKey: 'universidad_id', as: 'carreras', onDelete: 'RESTRICT' });
+db.Carrera.belongsTo(db.Universidad, { foreignKey: 'universidad_id', as: 'universidad' });
+&nbsp;
+db.Carrera.hasMany(db.Materia, { foreignKey: 'carrera_id', as: 'materias', onDelete: 'CASCADE' });
+db.Materia.belongsTo(db.Carrera, { foreignKey: 'carrera_id', as: 'carrera' });
+&nbsp;
+db.Universidad.hasMany(db.CicloAcademico, { foreignKey: 'universidad_id', as: 'ciclos', onDelete: 'RESTRICT' });
+db.CicloAcademico.belongsTo(db.Universidad, { foreignKey: 'universidad_id', as: 'universidad' });
+&nbsp;
+db.Persona.hasOne(db.Becario, { foreignKey: 'persona_id', as: 'becario', onDelete: 'CASCADE' });
+db.Becario.belongsTo(db.Persona, { foreignKey: 'persona_id', as: 'persona' });
+&nbsp;
+db.Universidad.hasMany(db.Becario, { foreignKey: 'universidad_id', as: 'becarios', onDelete: 'RESTRICT' });
+db.Becario.belongsTo(db.Universidad, { foreignKey: 'universidad_id', as: 'universidad' });
+&nbsp;
+db.Carrera.hasMany(db.Becario, { foreignKey: 'carrera_id', as: 'becarios', onDelete: 'RESTRICT' });
+db.Becario.belongsTo(db.Carrera, { foreignKey: 'carrera_id', as: 'carrera' });
+&nbsp;
+db.Becario.hasMany(db.MateriaCursada, { foreignKey: 'becario_id', as: 'materias_cursadas', onDelete: 'CASCADE' });
+db.MateriaCursada.belongsTo(db.Becario, { foreignKey: 'becario_id', as: 'becario' });
+&nbsp;
+db.Materia.hasMany(db.MateriaCursada, { foreignKey: 'materia_id', as: 'historicos_cursados', onDelete: 'RESTRICT' });
+db.MateriaCursada.belongsTo(db.Materia, { foreignKey: 'materia_id', as: 'materia' });
+&nbsp;
+db.CicloAcademico.hasMany(db.MateriaCursada, { foreignKey: 'ciclo_id', as: 'materias_cursadas', onDelete: 'RESTRICT' });
+db.MateriaCursada.belongsTo(db.CicloAcademico, { foreignKey: 'ciclo_id', as: 'ciclo' });
+&nbsp;
+db.Becario.hasMany(db.Documento, { foreignKey: 'becario_id', as: 'documentos', onDelete: 'CASCADE' });
+db.Documento.belongsTo(db.Becario, { foreignKey: 'becario_id', as: 'becario' });
+&nbsp;
+// Module 3 Associations
+db.Persona.hasOne(db.Padrino, { foreignKey: 'persona_id', as: 'padrino', onDelete: 'CASCADE' });
+db.Padrino.belongsTo(db.Persona, { foreignKey: 'persona_id', as: 'persona' });
+&nbsp;
+db.Padrino.hasMany(db.Aporte, { foreignKey: 'padrino_id', as: 'aportes', onDelete: 'SET NULL' });
+db.Aporte.belongsTo(db.Padrino, { foreignKey: 'padrino_id', as: 'padrino' });
+&nbsp;
+db.InstitucionPublica.hasMany(db.Aporte, { foreignKey: 'institucion_id', as: 'aportes', onDelete: 'SET NULL' });
+db.Aporte.belongsTo(db.InstitucionPublica, { foreignKey: 'institucion_id', as: 'institucion' });
+&nbsp;
+db.Becario.belongsToMany(db.Padrino, { through: db.BecarioPadrino, foreignKey: 'becario_id', otherKey: 'padrino_id', as: 'padrinos' });
+db.Padrino.belongsToMany(db.Becario, { through: db.BecarioPadrino, foreignKey: 'padrino_id', otherKey: 'becario_id', as: 'becarios' });
+&nbsp;
+db.Becario.hasMany(db.BecarioPadrino, { foreignKey: 'becario_id', as: 'asignaciones_padrinos', onDelete: 'CASCADE' });
+db.BecarioPadrino.belongsTo(db.Becario, { foreignKey: 'becario_id', as: 'becario' });
+&nbsp;
+db.Padrino.hasMany(db.BecarioPadrino, { foreignKey: 'padrino_id', as: 'asignaciones_becarios', onDelete: 'CASCADE' });
+db.BecarioPadrino.belongsTo(db.Padrino, { foreignKey: 'padrino_id', as: 'padrino' });
+&nbsp;
+// Module 4 Associations
+db.Becario.hasMany(db.Pago, { foreignKey: 'becario_id', as: 'pagos', onDelete: 'CASCADE' });
+db.Pago.belongsTo(db.Becario, { foreignKey: 'becario_id', as: 'becario' });
+&nbsp;
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+&nbsp;
+module.exports = db;
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-07-31T19:06:51.024Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    
