@@ -1,7 +1,7 @@
 {
   "name": "crm-becas-backend",
   "version": "1.0.0",
-  "description": "Backend API for CRM Fundación Rompiendo Paradigmas - Modules 1, 2, 3, 4",
+  "description": "Backend API for CRM Fundación Rompiendo Paradigmas - Modules 1-7",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
@@ -13,7 +13,8 @@
     "create-admin": "node scripts/create-admin.js",
     "seed:academic": "node scripts/seed-academic-data.js",
     "seed:sponsors": "node scripts/seed-sponsors-data.js",
-    "seed:financial": "node scripts/seed-financial-data.js"
+    "seed:financial": "node scripts/seed-financial-data.js",
+    "migrate:excel": "node scripts/migrate-excel-data.js"
   },
   "keywords": [
     "crm",
