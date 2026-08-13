@@ -7,6 +7,7 @@ router.use(verifyToken);
 
 router.get('/', AlarmaController.list);
 router.get('/resumen', AlarmaController.getSummary);
+router.post('/', AlarmaController.create);
 router.post('/evaluar', AlarmaController.evaluar);
 router.put('/:id/atender', AlarmaController.atender);
 router.put('/:id/descartar', AlarmaController.descartar);

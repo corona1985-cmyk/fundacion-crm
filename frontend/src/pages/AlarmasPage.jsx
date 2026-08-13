@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Card, Tag, Button, Typography, Space, message, Modal, Form, Input, Select, Row, Col, Statistic } from 'antd';
-import { BellOutlined, CheckCircleOutlined, CloseCircleOutlined, SyncOutlined, AlertOutlined } from '@ant-design/icons';
+import { BellOutlined, CheckCircleOutlined, CloseCircleOutlined, SyncOutlined, AlertOutlined, PlusOutlined } from '@ant-design/icons';
 import { alarmaApi } from '../api/alarmaApi';
 import { useAuth } from '../context/AuthContext';
 
@@ -14,10 +14,12 @@ const AlarmasPage = () => {
   const [filterEstado, setFilterEstado] = useState('pendiente');
   const [filterNivel, setFilterNivel] = useState(null);
 
+  const [createModalVisible, setCreateModalVisible] = useState(false);
   const [atenderModalVisible, setAtenderModalVisible] = useState(false);
   const [descartarModalVisible, setDescartarModalVisible] = useState(false);
   const [selectedAlarma, setSelectedAlarma] = useState(null);
 
+  const [formCreate] = Form.useForm();
   const [formAtender] = Form.useForm();
   const [formDescartar] = Form.useForm();
 
@@ -47,6 +49,20 @@ const AlarmasPage = () => {
   useEffect(() => {
     loadData();
   }, [filterEstado, filterNivel]);
+
+  const handleCreateAlarma = async (values) => {
+    try {
+      const res = await alarmaApi.create(values);
+      if (res.data?.success || res.success) {
+        message.success('Alarma creada exitosamente');
+        setCreateModalVisible(false);
+        formCreate.resetFields();
+        loadData();
+      }
+    } catch (err) {
+      message.error(err.message || 'Error al crear alarma');
+    }
+  };
 
   const handleManualSweep = async () => {
     try {
@@ -156,9 +172,14 @@ const AlarmasPage = () => {
           <BellOutlined style={{ color: '#ff4d4f', marginRight: 12 }} />
           Centro de Notificaciones y Alarmas
         </Title>
-        <Button icon={<SyncOutlined />} onClick={handleManualSweep} loading={loading}>
-          Evaluar Reglas Ahora
-        </Button>
+        <Space>
+          <Button type="primary" icon={<PlusOutlined />} onClick={() => setCreateModalVisible(true)}>
+            Crear Nueva Alarma
+          </Button>
+          <Button icon={<SyncOutlined />} onClick={handleManualSweep} loading={loading}>
+            Evaluar Reglas Ahora
+          </Button>
+        </Space>
       </div>
 
       {/* Summary Cards */}
@@ -236,6 +257,40 @@ const AlarmasPage = () => {
         <Form form={formDescartar} layout="vertical">
           <Form.Item name="resolucion_nota" label="Justificación de Descarte" rules={[{ required: true, message: 'Ingrese justificación' }]}>
             <Input.TextArea rows={3} placeholder="Motivo por el cual se descarta esta alerta." />
+          </Form.Item>
+        </Form>
+      </Modal>
+
+      {/* Modal Crear Nueva Alarma */}
+      <Modal
+        title="Crear Nueva Alarma o Notificación Personalizada"
+        open={createModalVisible}
+        onOk={() => formCreate.submit()}
+        onCancel={() => setCreateModalVisible(false)}
+        destroyOnHidden
+      >
+        <Form form={formCreate} layout="vertical" onFinish={handleCreateAlarma}>
+          <Form.Item name="titulo" label="Título / Asunto de la Alarma" rules={[{ required: true, message: 'Ingrese el título' }]}>
+            <Input placeholder="Ej. Graduación de Liceo - Politécnico Canadá" />
+          </Form.Item>
+          <Form.Item name="tipo" label="Tipo de Alarma / Evento" initialValue="GRADUACION_PROXIMA" rules={[{ required: true }]}>
+            <Select>
+              <Option value="GRADUACION_PROXIMA">🎓 Graduación Próxima de Liceo / Politécnico</Option>
+              <Option value="PROMEDIO_BAJO">⚠️ Bajo Índice Académico</Option>
+              <Option value="DOCUMENTO_VENCIDO">📄 Documentación Vencida / Pendiente</Option>
+              <Option value="PAGO_VENCIDO">💳 Pago Vencido a Universidad</Option>
+              <Option value="APORTE_RETRASADO">💰 Aporte de Padrino Retrasado</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item name="nivel" label="Nivel de Severidad" initialValue="medio" rules={[{ required: true }]}>
+            <Select>
+              <Option value="critico">🔴 Crítico (Urgente)</Option>
+              <Option value="medio">🟠 Medio (Importante)</Option>
+              <Option value="bajo">🔵 Bajo (Informativo)</Option>
+            </Select>
+          </Form.Item>
+          <Form.Item name="descripcion" label="Descripción / Detalles del Evento">
+            <Input.TextArea rows={3} placeholder="Detalles de la graduación, fecha, hora, requerimientos de vestimenta o entrega de certificado." />
           </Form.Item>
         </Form>
       </Modal>

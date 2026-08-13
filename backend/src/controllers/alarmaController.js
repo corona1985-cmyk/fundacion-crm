@@ -171,6 +171,41 @@ class AlarmaController {
   }
 
   /**
+   * POST /alarmas
+   * Manually create a custom alarm/notification (e.g. Graduation Event, Academic Follow-up)
+   */
+  static async create(req, res, next) {
+    try {
+      const { tipo, nivel, titulo, descripcion, entidad_relacionada, entidad_id } = req.body;
+      const alarma = await Alarma.create({
+        tipo: tipo || 'GRADUACION_PROXIMA',
+        nivel: nivel || 'medio',
+        titulo,
+        descripcion,
+        entidad_relacionada: entidad_relacionada || 'becario',
+        entidad_id: entidad_id || null,
+        estado: 'pendiente'
+      });
+
+      await AuditService.logCreate({
+        usuarioId: req.user ? req.user.id : null,
+        entidad: 'Alarma',
+        entidadId: alarma.id,
+        datosNuevos: alarma.toJSON(),
+        req
+      });
+
+      return res.status(201).json({
+        success: true,
+        message: 'Alarma / Notificación creada exitosamente',
+        data: alarma
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  /**
    * POST /alarmas/evaluar
    * Force manual rule evaluation sweep
    */
