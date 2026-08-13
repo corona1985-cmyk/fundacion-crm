@@ -41,14 +41,14 @@ async function importOfficialAlarmas() {
 
     // 2. GRADUACIONES PROXIMAS ALARMS (Upcoming High School Graduations)
     const graduationEvents = [
-      { name: 'Hansel Marcelino López', center: 'Politécnico Canadá', dateStr: '14 de Agosto 2026', note: 'Acto de Graduación agendado para el 14 de agosto.' },
-      { name: 'Marina Camila Nazarre Peña', center: 'Politécnico Maestra Elsa Brito', dateStr: '28 de Agosto 2026', note: 'Acto de Graduación agendado para el viernes 28 de agosto.' },
-      { name: 'Daniel Sarita Peña', center: 'UFE', dateStr: '29 de Agosto 2026', note: 'Acto de Graduación agendado para el sábado 29 de agosto.' },
-      { name: 'Rosibel Del Carmen García Genao', center: 'Liceo Onésimo Jiménez', dateStr: '29 de Agosto 2026', note: 'Acto de Graduación agendado para el 29 de agosto.' },
-      { name: 'Zoe Cavaliere Familia', center: 'Politécnico La Esperanza', dateStr: '30 de Agosto 2026', note: 'Acto de Graduación agendado para el 30 de agosto.' },
-      { name: 'Irainy Céspedes García', center: 'Politécnico Braulio Paulino', dateStr: 'Septiembre 2026', note: 'Acto de Graduación agendado para Septiembre.' },
-      { name: 'Chanell Alexandra Emiliana Almarante Jiménez', center: 'Don Bosco', dateStr: 'Octubre 2026', note: 'Acto de Graduación agendado para Octubre.' },
-      { name: 'Kiara Torres Rodriguez', center: 'IPISA', dateStr: '16 de Octubre 2026', note: 'Acto de Graduación agendado para el 16 de octubre.' }
+      { name: 'Hansel Marcelino López', center: 'Politécnico Canadá', date: '2026-08-14', note: 'Acto de Graduación agendado para el 14 de agosto.' },
+      { name: 'Marina Camila Nazarre Peña', center: 'Politécnico Maestra Elsa Brito', date: '2026-08-28', note: 'Acto de Graduación agendado para el viernes 28 de agosto.' },
+      { name: 'Daniel Sarita Peña', center: 'UFE', date: '2026-08-29', note: 'Acto de Graduación agendado para el sábado 29 de agosto.' },
+      { name: 'Rosibel Del Carmen García Genao', center: 'Liceo Onésimo Jiménez', date: '2026-08-29', note: 'Acto de Graduación agendado para el 29 de agosto.' },
+      { name: 'Zoe Cavaliere Familia', center: 'Politécnico La Esperanza', date: '2026-08-30', note: 'Acto de Graduación agendado para el 30 de agosto.' },
+      { name: 'Irainy Céspedes García', center: 'Politécnico Braulio Paulino', date: '2026-09-15', note: 'Acto de Graduación agendado para Septiembre.' },
+      { name: 'Chanell Alexandra Emiliana Almarante Jiménez', center: 'Don Bosco', date: '2026-10-01', note: 'Acto de Graduación agendado para Octubre.' },
+      { name: 'Kiara Torres Rodriguez', center: 'IPISA', date: '2026-10-16', note: 'Acto de Graduación agendado para el 16 de octubre.' }
     ];
 
     for (const item of graduationEvents) {
@@ -68,6 +68,7 @@ async function importOfficialAlarmas() {
         descripcion: `${item.note} Estatus de solicitud de beca: Creado.`,
         entidad_relacionada: 'becario',
         entidad_id: becarioId,
+        fecha_evento: item.date,
         estado: 'pendiente'
       });
       count++;
@@ -75,8 +76,8 @@ async function importOfficialAlarmas() {
 
     // 3. PAGOS VENCIDOS / PROXIMOS ALARMS (University Tuition Due)
     const tuitionDueList = [
-      { uni: 'UTESA', monto: '14,000.00', vencimiento: '30-08-2026', note: 'Cuota cuatrimestre 3-2026 UTESA por vencer.' },
-      { uni: 'PUCMM', monto: '16,500.00', vencimiento: '15-09-2026', note: 'Cuota cuatrimestre 3-2026 PUCMM por vencer.' }
+      { uni: 'UTESA', monto: '14,000.00', vencimiento: '2026-08-30', note: 'Cuota cuatrimestre 3-2026 UTESA por vencer.' },
+      { uni: 'PUCMM', monto: '16,500.00', vencimiento: '2026-09-15', note: 'Cuota cuatrimestre 3-2026 PUCMM por vencer.' }
     ];
 
     for (const item of tuitionDueList) {
@@ -87,6 +88,7 @@ async function importOfficialAlarmas() {
         descripcion: `${item.note} Fecha límite de pago: ${item.vencimiento}`,
         entidad_relacionada: 'pago',
         entidad_id: null,
+        fecha_evento: item.vencimiento,
         estado: 'pendiente'
       });
       count++;

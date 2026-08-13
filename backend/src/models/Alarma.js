@@ -32,6 +32,10 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: true
     },
+    fecha_evento: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
     estado: {
       type: DataTypes.ENUM('pendiente', 'atendida', 'descartada'),
       allowNull: false,

@@ -176,7 +176,7 @@ class AlarmaController {
    */
   static async create(req, res, next) {
     try {
-      const { tipo, nivel, titulo, descripcion, entidad_relacionada, entidad_id } = req.body;
+      const { tipo, nivel, titulo, descripcion, entidad_relacionada, entidad_id, fecha_evento } = req.body;
       const alarma = await Alarma.create({
         tipo: tipo || 'GRADUACION_PROXIMA',
         nivel: nivel || 'medio',
@@ -184,6 +184,7 @@ class AlarmaController {
         descripcion,
         entidad_relacionada: entidad_relacionada || 'becario',
         entidad_id: entidad_id || null,
+        fecha_evento: fecha_evento || null,
         estado: 'pendiente'
       });
 

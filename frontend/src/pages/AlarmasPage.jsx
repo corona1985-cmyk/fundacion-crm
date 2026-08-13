@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Card, Tag, Button, Typography, Space, message, Modal, Form, Input, Select, Row, Col, Statistic } from 'antd';
-import { BellOutlined, CheckCircleOutlined, CloseCircleOutlined, SyncOutlined, AlertOutlined, PlusOutlined } from '@ant-design/icons';
+import { Table, Card, Tag, Button, Typography, Space, message, Modal, Form, Input, Select, Row, Col, Statistic, Tabs, DatePicker } from 'antd';
+import { BellOutlined, CheckCircleOutlined, CloseCircleOutlined, SyncOutlined, AlertOutlined, PlusOutlined, CalendarOutlined, AuditOutlined } from '@ant-design/icons';
 import { alarmaApi } from '../api/alarmaApi';
 import { useAuth } from '../context/AuthContext';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
+const { TabPane } = Tabs;
 
 const AlarmasPage = () => {
   const [alarmas, setAlarmas] = useState([]);
@@ -52,7 +53,11 @@ const AlarmasPage = () => {
 
   const handleCreateAlarma = async (values) => {
     try {
-      const res = await alarmaApi.create(values);
+      const payload = {
+        ...values,
+        fecha_evento: values.fecha_evento ? values.fecha_evento.format('YYYY-MM-DD') : null
+      };
+      const res = await alarmaApi.create(payload);
       if (res.data?.success || res.success) {
         message.success('Alarma creada exitosamente');
         setCreateModalVisible(false);
@@ -120,7 +125,12 @@ const AlarmasPage = () => {
     },
     { title: 'Título / Asunto', dataIndex: 'titulo', render: (t) => <Text strong>{t}</Text> },
     { title: 'Descripción', dataIndex: 'descripcion' },
-    { title: 'Fecha Generación', dataIndex: 'createdAt', render: (d) => new Date(d).toLocaleString() },
+    {
+      title: '📅 Fecha Evento / Graduación',
+      dataIndex: 'fecha_evento',
+      render: (fe) => fe ? <Tag color="purple"><CalendarOutlined /> {fe}</Tag> : <Text type="secondary">N/A</Text>
+    },
+    { title: 'Fecha Registro', dataIndex: 'createdAt', render: (d) => new Date(d).toLocaleDateString() },
     {
       title: 'Estado',
       dataIndex: 'estado',
@@ -206,30 +216,80 @@ const AlarmasPage = () => {
         </Col>
       </Row>
 
-      {/* Filter Bar */}
-      <Card style={{ marginBottom: 16 }}>
-        <Space wrap>
-          <Select value={filterEstado} onChange={setFilterEstado} style={{ width: 160 }}>
-            <Option value="pendiente">Pendientes</Option>
-            <Option value="atendida">Atendidas</Option>
-            <Option value="descartada">Descartadas</Option>
-          </Select>
-          <Select placeholder="Severidad" allowClear value={filterNivel} onChange={setFilterNivel} style={{ width: 160 }}>
-            <Option value="critico">Crítico</Option>
-            <Option value="medio">Medio</Option>
-            <Option value="bajo">Bajo</Option>
-          </Select>
-        </Space>
-      </Card>
+      <Tabs defaultActiveKey="1" type="card">
+        <TabPane tab={<span><BellOutlined /> TODAS LAS ALARMAS</span>} key="1">
+          {/* Filter Bar */}
+          <Card style={{ marginBottom: 16 }}>
+            <Space wrap>
+              <Select value={filterEstado} onChange={setFilterEstado} style={{ width: 160 }}>
+                <Option value="pendiente">Pendientes</Option>
+                <Option value="atendida">Atendidas</Option>
+                <Option value="descartada">Descartadas</Option>
+              </Select>
+              <Select placeholder="Severidad" allowClear value={filterNivel} onChange={setFilterNivel} style={{ width: 160 }}>
+                <Option value="critico">Crítico</Option>
+                <Option value="medio">Medio</Option>
+                <Option value="bajo">Bajo</Option>
+              </Select>
+            </Space>
+          </Card>
 
-      <Card>
-        <Table
-          dataSource={alarmas}
-          columns={columns}
-          rowKey="id"
-          loading={loading}
-        />
-      </Card>
+          <Card>
+            <Table
+              dataSource={alarmas}
+              columns={columns}
+              rowKey="id"
+              loading={loading}
+            />
+          </Card>
+        </TabPane>
+
+        <TabPane tab={<span><CalendarOutlined style={{ color: '#722ed1' }} /> 🎓 CALENDARIO DE GRADUACIONES DE LICEOS</span>} key="2">
+          <Card title="Itinerario de Actos de Graduación y Entrega de Solicitudes">
+            <Table
+              dataSource={alarmas.filter(a => a.tipo === 'GRADUACION_PROXIMA')}
+              columns={[
+                { title: 'Evento / Becario', dataIndex: 'titulo', render: (t) => <Text strong style={{ color: '#722ed1' }}>{t}</Text> },
+                {
+                  title: '📅 Fecha de Graduación',
+                  dataIndex: 'fecha_evento',
+                  render: (fe) => fe ? <Tag color="purple" style={{ fontSize: 14, padding: '4px 8px' }}><CalendarOutlined /> {fe}</Tag> : <Text type="secondary">Fecha no especificada</Text>
+                },
+                { title: 'Detalles / Politécnico', dataIndex: 'descripcion' },
+                {
+                  title: 'Estado',
+                  dataIndex: 'estado',
+                  render: (est) => {
+                    const colors = { pendiente: 'volcano', atendida: 'green', descartada: 'default' };
+                    return <Tag color={colors[est]}>{est?.toUpperCase()}</Tag>;
+                  }
+                },
+                {
+                  title: 'Acciones',
+                  key: 'acciones',
+                  render: (record) => (
+                    record.estado === 'pendiente' && (
+                      <Button
+                        type="primary"
+                        size="small"
+                        icon={<CheckCircleOutlined />}
+                        onClick={() => {
+                          setSelectedAlarma(record);
+                          setAtenderModalVisible(true);
+                        }}
+                      >
+                        Confirmar / Atender
+                      </Button>
+                    )
+                  )
+                }
+              ]}
+              rowKey="id"
+              loading={loading}
+            />
+          </Card>
+        </TabPane>
+      </Tabs>
 
       {/* Modal Atender Alarma */}
       <Modal
@@ -288,6 +348,9 @@ const AlarmasPage = () => {
               <Option value="medio">🟠 Medio (Importante)</Option>
               <Option value="bajo">🔵 Bajo (Informativo)</Option>
             </Select>
+          </Form.Item>
+          <Form.Item name="fecha_evento" label="📅 Fecha de la Graduación / Evento">
+            <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" placeholder="Seleccione fecha de la graduación" />
           </Form.Item>
           <Form.Item name="descripcion" label="Descripción / Detalles del Evento">
             <Input.TextArea rows={3} placeholder="Detalles de la graduación, fecha, hora, requerimientos de vestimenta o entrega de certificado." />
