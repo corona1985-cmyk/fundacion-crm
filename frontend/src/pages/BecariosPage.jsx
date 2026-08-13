@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Card, Button, Input, Select, Space, Tag, Modal, Form, message, Typography, Popconfirm } from 'antd';
-import { PlusOutlined, SearchOutlined, EyeOutlined, EditOutlined, DeleteOutlined, FileExcelOutlined, FilePdfOutlined } from '@ant-design/icons';
+import { PlusOutlined, SearchOutlined, EyeOutlined, EditOutlined, DeleteOutlined, FileExcelOutlined, FilePdfOutlined, PrinterOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
 import { becarioApi } from '../api/becarioApi';
 import { reporteApi } from '../api/reporteApi';
@@ -18,10 +18,44 @@ export const BecariosPage = () => {
   const [filters, setFilters] = useState({ search: '', universidad_id: null, estado_beca: null });
 
   const [modalVisible, setModalVisible] = useState(false);
+  const [itinerarioVisible, setItinerarioVisible] = useState(false);
   const [editingBecario, setEditingBecario] = useState(null);
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const { hasRole } = useAuth();
+
+  const handleTriggerPrint = () => {
+    const printContent = document.getElementById('printable-itinerario-content');
+    const win = window.open('', '_blank');
+    win.document.write(`
+      <html>
+        <head>
+          <title>Itinerario de Graduaciones - Fundación Rompiendo Paradigmas</title>
+          <style>
+            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; padding: 20px; color: #111; }
+            h1 { color: #1890ff; margin-bottom: 5px; }
+            h2 { color: #555; margin-top: 0; font-size: 16px; font-weight: normal; }
+            table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+            th, td { border: 1px solid #ddd; padding: 10px; text-align: left; font-size: 13px; }
+            th { background-color: #f0f2f5; font-weight: bold; }
+            .badge-graduado { background-color: #e6f7ff; color: #1890ff; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+            .badge-agendado { background-color: #f6ffed; color: #52c41a; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+            .badge-pendiente { background-color: #fff7e6; color: #fa8c16; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
+            .footer { margin-top: 30px; font-size: 12px; color: #888; text-align: center; border-top: 1px solid #eee; padding-top: 10px; }
+          </style>
+        </head>
+        <body>
+          ${printContent.innerHTML}
+        </body>
+      </html>
+    `);
+    win.document.close();
+    win.focus();
+    setTimeout(() => {
+      win.print();
+      win.close();
+    }, 500);
+  };
 
   const loadBecarios = async (page = 1) => {
     setLoading(true);
@@ -210,7 +244,15 @@ export const BecariosPage = () => {
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         <Title level={3} style={{ margin: 0 }}>Gestión de Becarios</Title>
-        <Space>
+        <Space wrap>
+          <Button
+            type="primary"
+            icon={<PrinterOutlined />}
+            style={{ backgroundColor: '#722ed1', borderColor: '#722ed1' }}
+            onClick={() => setItinerarioVisible(true)}
+          >
+            Imprimir Itinerario Graduaciones
+          </Button>
           <Button icon={<FileExcelOutlined />} onClick={() => reporteApi.exportExcel('becarios')}>
             Excel
           </Button>
@@ -329,6 +371,64 @@ export const BecariosPage = () => {
             </>
           )}
         </Form>
+      </Modal>
+      {/* Modal Itinerario de Graduaciones */}
+      <Modal
+        title="Itinerario de Graduaciones de Liceos y Politécnicos 2026"
+        open={itinerarioVisible}
+        onCancel={() => setItinerarioVisible(false)}
+        width={900}
+        footer={[
+          <Button key="close" onClick={() => setItinerarioVisible(false)}>
+            Cerrar
+          </Button>,
+          <Button key="print" type="primary" icon={<PrinterOutlined />} onClick={handleTriggerPrint}>
+            Imprimir Documento
+          </Button>
+        ]}
+      >
+        <div id="printable-itinerario-content" style={{ padding: '10px' }}>
+          <div style={{ textAlign: 'center', marginBottom: 20 }}>
+            <h1 style={{ color: '#1890ff', margin: 0, fontSize: '22px' }}>FUNDACIÓN ROMPIENDO PARADIGMAS</h1>
+            <h2 style={{ color: '#555', margin: '5px 0', fontSize: '15px' }}>ITINERARIO DE ACTOS DE GRADUACIÓN DE POLITÉCNICOS Y LICEOS 2026</h2>
+            <p style={{ color: '#888', fontSize: '12px', margin: 0 }}>Reporte Generado el {new Date().toLocaleDateString('es-DO')}</p>
+          </div>
+
+          <table style={{ width: '100%', borderCollapse: 'collapse', marginTop: '10px' }}>
+            <thead>
+              <tr style={{ backgroundColor: '#f0f2f5' }}>
+                <th style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px' }}>#</th>
+                <th style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px' }}>Estudiante / Becado</th>
+                <th style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px' }}>Politécnico / Liceo de Origen</th>
+                <th style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px' }}>Estatus / Fecha Graduación</th>
+                <th style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px' }}>Documento Beca</th>
+              </tr>
+            </thead>
+            <tbody>
+              {becarios.map((b, idx) => (
+                <tr key={b.id || idx}>
+                  <td style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px', textAlign: 'center' }}>{idx + 1}</td>
+                  <td style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px', fontWeight: 'bold' }}>
+                    {b.persona?.nombre} {b.persona?.apellido}
+                  </td>
+                  <td style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px' }}>{b.centro_origen || 'No especificado'}</td>
+                  <td style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px' }}>
+                    <span className={b.estado_graduacion_liceo === 'Graduados' ? 'badge-graduado' : b.estado_graduacion_liceo?.includes('Agendado') ? 'badge-agendado' : 'badge-pendiente'}>
+                      {b.estado_graduacion_liceo || 'Pendiente'}
+                    </span>
+                  </td>
+                  <td style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px', color: '#52c41a' }}>
+                    {b.documento_solicitud || 'Documento Creado'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div className="footer" style={{ marginTop: '25px', textAlign: 'center', fontSize: '11px', color: '#999', borderTop: '1px solid #eee', paddingTop: '10px' }}>
+            Fundación Rompiendo Paradigmas - Sistema Integral CRM de Becas | Santiago, República Dominicana
+          </div>
+        </div>
       </Modal>
     </div>
   );
