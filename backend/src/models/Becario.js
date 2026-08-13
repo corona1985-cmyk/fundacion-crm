@@ -65,6 +65,16 @@ module.exports = (sequelize) => {
       type: DataTypes.DECIMAL(4, 2),
       allowNull: true,
       defaultValue: null
+    },
+    estado_graduacion_liceo: {
+      type: DataTypes.STRING(150),
+      allowNull: true,
+      defaultValue: 'Pendiente'
+    },
+    documento_solicitud: {
+      type: DataTypes.STRING(150),
+      allowNull: true,
+      defaultValue: 'Documento de solicitud de beca Creado'
     }
   }, {
     tableName: 'becarios',

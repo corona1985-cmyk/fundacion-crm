@@ -140,12 +140,30 @@ export const BecariosPage = () => {
       dataIndex: ['carrera', 'nombre'],
     },
     {
+      title: 'Politécnico / Centro Origen',
+      dataIndex: 'centro_origen',
+      render: (centro) => centro || '-'
+    },
+    {
+      title: 'Graduación de Liceo',
+      dataIndex: 'estado_graduacion_liceo',
+      render: (estado) => (
+        <Tag color={estado === 'Graduados' ? 'green' : estado?.includes('Agendado') ? 'blue' : 'orange'}>
+          {estado || 'Pendiente'}
+        </Tag>
+      )
+    },
+    {
       title: 'Índice (GPA)',
       dataIndex: 'promedio_general',
       render: (gpa) => (
-        <Tag color={parseFloat(gpa) >= 2.50 ? 'green' : 'volcano'}>
-          {parseFloat(gpa || 0).toFixed(2)}
-        </Tag>
+        gpa !== null && gpa !== undefined ? (
+          <Tag color={parseFloat(gpa) >= 2.50 ? 'green' : 'volcano'}>
+            {parseFloat(gpa).toFixed(2)}
+          </Tag>
+        ) : (
+          <Tag color="cyan">Nuevo Ingreso</Tag>
+        )
       )
     },
     {
