@@ -63,8 +63,8 @@ module.exports = (sequelize) => {
     },
     promedio_general: {
       type: DataTypes.DECIMAL(4, 2),
-      allowNull: false,
-      defaultValue: 0.00
+      allowNull: true,
+      defaultValue: null
     }
   }, {
     tableName: 'becarios',
