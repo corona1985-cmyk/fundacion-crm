@@ -9,7 +9,11 @@ import {
   LogoutOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  TrophyOutlined
+  TrophyOutlined,
+  FundOutlined,
+  DownloadOutlined,
+  SafetyCertificateOutlined,
+  SettingOutlined
 } from '@ant-design/icons';
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -20,7 +24,7 @@ const { Text, Title } = Typography;
 
 const AppLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
-  const { user, logout } = useAuth();
+  const { user, logout, hasRole } = useAuth();
   const { alarms, unreadCount } = useNotifications();
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,7 +34,13 @@ const AppLayout = () => {
     { key: '/becarios', icon: <UserOutlined />, label: 'Becarios' },
     { key: '/padrinos', icon: <TeamOutlined />, label: 'Padrinos e Inst.' },
     { key: '/financiero', icon: <DollarOutlined />, label: 'Gestión Financiera' },
+    { key: '/presupuesto', icon: <FundOutlined />, label: 'Presupuesto' },
     { key: '/alarmas', icon: <BellOutlined />, label: 'Centro de Alarmas' },
+    { key: '/reportes', icon: <DownloadOutlined />, label: 'Reportes y Export' },
+    ...(hasRole('ADMINISTRADOR') ? [
+      { key: '/usuarios', icon: <SettingOutlined />, label: 'Usuarios' },
+      { key: '/auditoria', icon: <SafetyCertificateOutlined />, label: 'Auditoría' }
+    ] : [])
   ];
 
   const userMenuItems = [

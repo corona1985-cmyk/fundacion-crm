@@ -15,6 +15,10 @@ import PadrinosPage from './pages/PadrinosPage';
 import PadrinoDetailPage from './pages/PadrinoDetailPage';
 import FinancieroPage from './pages/FinancieroPage';
 import AlarmasPage from './pages/AlarmasPage';
+import ReportesPage from './pages/ReportesPage';
+import PresupuestoPage from './pages/PresupuestoPage';
+import UsuariosPage from './pages/UsuariosPage';
+import AuditoriaPage from './pages/AuditoriaPage';
 
 function App() {
   return (
@@ -34,7 +38,11 @@ function App() {
                   <Route path="/padrinos" element={<PadrinosPage />} />
                   <Route path="/padrinos/:id" element={<PadrinoDetailPage />} />
                   <Route path="/financiero" element={<FinancieroPage />} />
+                  <Route path="/presupuesto" element={<PresupuestoPage />} />
                   <Route path="/alarmas" element={<AlarmasPage />} />
+                  <Route path="/reportes" element={<ReportesPage />} />
+                  <Route path="/usuarios" element={<UsuariosPage />} />
+                  <Route path="/auditoria" element={<AuditoriaPage />} />
                 </Route>
               </Route>
 
