@@ -8,7 +8,7 @@ module.exports = (sequelize) => {
       autoIncrement: true
     },
     tipo: {
-      type: DataTypes.ENUM('PROMEDIO_BAJO', 'MATERIA_REPROBADA', 'DOCUMENTO_VENCIDO', 'PAGO_VENCIDO', 'APORTE_RETRASADO'),
+      type: DataTypes.ENUM('PROMEDIO_BAJO', 'MATERIA_REPROBADA', 'DOCUMENTO_VENCIDO', 'PAGO_VENCIDO', 'APORTE_RETRASADO', 'GRADUACION_PROXIMA'),
       allowNull: false
     },
     nivel: {
