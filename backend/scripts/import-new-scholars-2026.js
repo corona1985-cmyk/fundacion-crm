@@ -20,7 +20,7 @@ const newScholarsWithGraduations = [
   {
     name: 'Hansel Marcelino López',
     centro: 'Politécnico Canadá',
-    graduacion: 'Agendado 14 agost, sin hora',
+    graduacion: 'Agendado 14 de agosto, 4:00 PM',
     doc: 'Documento de solicitud de beca creado',
     uniSigla: 'UTESA',
     carreraName: 'Ingeniería en Sistemas Computacionales'

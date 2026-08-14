@@ -41,7 +41,7 @@ async function importOfficialAlarmas() {
 
     // 2. GRADUACIONES PROXIMAS ALARMS (Upcoming High School Graduations)
     const graduationEvents = [
-      { name: 'Hansel Marcelino López', center: 'Politécnico Canadá', date: '2026-08-14', note: 'Acto de Graduación agendado para el 14 de agosto.' },
+      { name: 'Hansel Marcelino López', center: 'Politécnico Canadá', date: '2026-08-14', note: 'Acto de Graduación agendado para el 14 de agosto a las 4:00 PM. Directora: María Margarita Estévez Cabral.' },
       { name: 'Marina Camila Nazarre Peña', center: 'Politécnico Maestra Elsa Brito', date: '2026-08-28', note: 'Acto de Graduación agendado para el viernes 28 de agosto.' },
       { name: 'Daniel Sarita Peña', center: 'UFE', date: '2026-08-29', note: 'Acto de Graduación agendado para el sábado 29 de agosto.' },
       { name: 'Rosibel Del Carmen García Genao', center: 'Liceo Onésimo Jiménez', date: '2026-08-29', note: 'Acto de Graduación agendado para el 29 de agosto.' },

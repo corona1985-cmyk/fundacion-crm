@@ -81,7 +81,8 @@ async function seedVerifiedOnly() {
       { name: 'Guillermo Estrella', center: 'Liceo Milagros Hernández' },
       { name: 'Dr. Luis Reynoso', center: 'Patrocinador Corporativo - Medicina' },
       { name: 'Félix García', center: 'Patrocinador Corporativo' },
-      { name: 'Tabacalera Palma', center: 'Empresa Patrocinadora' }
+      { name: 'Tabacalera Palma', center: 'Empresa Patrocinadora' },
+      { name: 'Brayan Collado', center: 'Politécnico Canadá' }
     ];
 
     for (const item of officialPadrinos) {
