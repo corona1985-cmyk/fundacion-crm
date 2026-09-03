@@ -67,11 +67,7 @@ axiosClient.interceptors.response.use(
   (response) => response.data,
   (error) => {
     if (error.response && error.response.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      if (window.location.pathname !== '/login') {
-        window.location.href = '/login';
-      }
+      console.warn('API 401: se continúa sin redirigir al login (acceso temporal abierto).');
     }
     const message = error.response?.data?.error?.message
       || (error.code === 'ECONNABORTED' ? 'El servidor tardó demasiado en responder. Intenta de nuevo.' : null)

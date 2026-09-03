@@ -18,6 +18,7 @@ import {
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useNotifications } from '../context/NotificationContext';
+import BotChatWidget from './BotChatWidget';
 
 const { Header, Sider, Content, Footer } = Layout;
 const { Text, Title } = Typography;
@@ -61,7 +62,7 @@ const AppLayout = () => {
       label: 'Cerrar Sesión',
       onClick: () => {
         logout();
-        navigate('/login');
+        navigate('/dashboard');
       },
     },
   ];
@@ -156,6 +157,9 @@ const AppLayout = () => {
           Fundación "Rompiendo Paradigmas" CRM ©2026 - Gestión de Becas Estudiantiles
         </Footer>
       </Layout>
+
+      {/* Floating Interactive Bot Chat Widget */}
+      <BotChatWidget />
     </Layout>
   );
 };

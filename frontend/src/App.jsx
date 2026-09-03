@@ -7,7 +7,6 @@ import { NotificationProvider } from './context/NotificationContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import AppLayout from './components/AppLayout';
 
-import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import BecariosPage from './pages/BecariosPage';
 import BecarioDetailPage from './pages/BecarioDetailPage';
@@ -19,6 +18,7 @@ import ReportesPage from './pages/ReportesPage';
 import PresupuestoPage from './pages/PresupuestoPage';
 import UsuariosPage from './pages/UsuariosPage';
 import AuditoriaPage from './pages/AuditoriaPage';
+import BotPortalPage from './pages/BotPortalPage';
 
 function App() {
   return (
@@ -27,7 +27,8 @@ function App() {
         <NotificationProvider>
           <BrowserRouter>
             <Routes>
-              <Route path="/login" element={<LoginPage />} />
+              <Route path="/login" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/bot" element={<BotPortalPage />} />
 
               <Route element={<ProtectedRoute />}>
                 <Route element={<AppLayout />}>
