@@ -2,7 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 const targetFile = process.env.DB_STORAGE;
-const shouldInject = process.env.DB_DIALECT === 'sqlite' || process.env.FORCE_SQLITE === 'true' || (targetFile && (targetFile.startsWith('/data') || process.env.INJECT_SQLITE === 'true'));
+const shouldInject = process.env.DB_DIALECT === 'sqlite'
+  || process.env.FORCE_SQLITE === 'true'
+  || process.env.INJECT_SQLITE === 'true'
+  || (targetFile && (targetFile.startsWith('/data') || targetFile.startsWith('/tmp')));
 
 if (targetFile && shouldInject) {
   const targetDir = path.dirname(targetFile);

@@ -1,10 +1,17 @@
 require('dotenv').config();
 const path = require('path');
 
+function defaultSqlitePath() {
+  if (process.env.FUNCTION_TARGET || process.env.K_SERVICE || process.env.FIREBASE_CONFIG) {
+    return '/tmp/crm_becas.sqlite';
+  }
+  return path.join(__dirname, '../crm_becas.sqlite');
+}
+
 function useSqliteFallback(reason) {
   delete process.env.DATABASE_URL;
   process.env.DB_DIALECT = 'sqlite';
-  process.env.DB_STORAGE = process.env.DB_STORAGE || path.join(__dirname, '../crm_becas.sqlite');
+  process.env.DB_STORAGE = process.env.DB_STORAGE || defaultSqlitePath();
   console.warn(`[bootstrapDb] ${reason}`);
   console.warn(`[bootstrapDb] Usando SQLite en ${process.env.DB_STORAGE}`);
 }

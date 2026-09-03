@@ -33,6 +33,8 @@ const reporteFinancieroRoutes = require('./routes/reporteFinancieroRoutes');
 const alarmaRoutes = require('./routes/alarmaRoutes');
 const reporteExportRoutes = require('./routes/reporteExportRoutes');
 
+const isServerless = Boolean(process.env.FUNCTION_TARGET || process.env.K_SERVICE || process.env.FIREBASE_CONFIG);
+
 const app = express();
 app.set('trust proxy', 1);
 
@@ -59,55 +61,46 @@ if (process.env.NODE_ENV !== 'test') {
 // Serve uploaded documents
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
-// Serve frontend dist bundle directly if present
 const frontendDistPath = path.join(__dirname, '../../frontend/dist');
-if (fs.existsSync(frontendDistPath)) {
+if (!isServerless && fs.existsSync(frontendDistPath)) {
   app.use(express.static(frontendDistPath));
 }
 
-// Health Check
-app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'OK', timestamp: new Date() });
-});
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'OK', timestamp: new Date() });
-});
+function mountApi(prefix = '') {
+  app.get(`${prefix}/health`, (req, res) => {
+    res.status(200).json({ status: 'OK', timestamp: new Date() });
+  });
 
-// API Routes Mounting
-app.use('/api/auth', authRoutes);
-app.use('/api/users', userRoutes);
-app.use('/api/auditoria', auditRoutes);
+  app.use(`${prefix}/auth`, authRoutes);
+  app.use(`${prefix}/users`, userRoutes);
+  app.use(`${prefix}/auditoria`, auditRoutes);
+  app.use(`${prefix}/universidades`, universidadRoutes);
+  app.use(`${prefix}/carreras`, carreraRoutes);
+  app.use(`${prefix}/ciclos`, cicloRoutes);
+  app.use(`${prefix}/becarios`, becarioRoutes);
+  app.use(`${prefix}/documentos`, documentoRoutes);
+  app.use(`${prefix}/upload`, documentoRoutes);
+  app.use(`${prefix}/padrinos`, padrinoRoutes);
+  app.use(`${prefix}/instituciones`, institucionRoutes);
+  app.use(`${prefix}/aportes`, aporteRoutes);
+  app.use(`${prefix}/pagos`, pagoRoutes);
+  app.use(`${prefix}/presupuesto`, presupuestoRoutes);
+  app.use(`${prefix}/reportes/financiero`, reporteFinancieroRoutes);
+  app.use(`${prefix}/alarmas`, alarmaRoutes);
+  app.use(`${prefix}/reportes/export`, reporteExportRoutes);
 
-// Module 2 Routes
-app.use('/api/universidades', universidadRoutes);
-app.use('/api/carreras', carreraRoutes);
-app.use('/api/ciclos', cicloRoutes);
-app.use('/api/becarios', becarioRoutes);
-app.use('/api/documentos', documentoRoutes);
-app.use('/api/upload', documentoRoutes);
-
-// Module 3 Routes
-app.use('/api/padrinos', padrinoRoutes);
-app.use('/api/instituciones', institucionRoutes);
-app.use('/api/aportes', aporteRoutes);
-
-// Module 4 Routes
-app.use('/api/pagos', pagoRoutes);
-app.use('/api/presupuesto', presupuestoRoutes);
-app.use('/api/reportes/financiero', reporteFinancieroRoutes);
-
-// Module 5 & 6 Routes
-app.use('/api/alarmas', alarmaRoutes);
-app.use('/api/reportes/export', reporteExportRoutes);
-if (process.env.ENABLE_WHATSAPP === 'true') {
-  const botRoutes = require('./routes/botRoutes');
-  app.use('/api/bot', botRoutes);
+  if (process.env.ENABLE_WHATSAPP === 'true') {
+    const botRoutes = require('./routes/botRoutes');
+    app.use(`${prefix}/bot`, botRoutes);
+  }
 }
 
-// Fallback SPA routing for frontend SPA
-if (fs.existsSync(frontendDistPath)) {
+mountApi('');
+mountApi('/api');
+
+if (!isServerless && fs.existsSync(frontendDistPath)) {
   app.get('*', (req, res, next) => {
-    if (req.url.startsWith('/uploads') || req.url.startsWith('/bot/qr')) {
+    if (req.url.startsWith('/uploads') || req.url.startsWith('/bot/qr') || req.url.startsWith('/api')) {
       return next();
     }
     res.sendFile(path.join(frontendDistPath, 'index.html'));

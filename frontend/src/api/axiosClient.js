@@ -1,44 +1,21 @@
 import axios from 'axios';
 
-const RAILWAY_API = 'https://crm-becas-backend-production.up.railway.app/api';
-const STALE_HOSTS = ['onrender.com', 'lhr.life', 'loca.lt', 'ngrok'];
-
-function isStaleHost(url) {
-  return STALE_HOSTS.some((host) => url.includes(host));
-}
-
-function normalizeBaseUrl(url) {
-  if (!url) return '';
-  const trimmed = url.replace(/\/+$/, '');
-  if (isStaleHost(trimmed)) {
-    return RAILWAY_API;
-  }
-  return trimmed;
-}
-
 function getBaseURL() {
   if (typeof window !== 'undefined') {
-    const customUrl = localStorage.getItem('custom_api_url');
-    if (customUrl) {
-      if (isStaleHost(customUrl)) {
-        localStorage.removeItem('custom_api_url');
-      } else {
-        const normalized = normalizeBaseUrl(customUrl);
-        return normalized.endsWith('/api') ? normalized : `${normalized}/api`;
-      }
-    }
-  }
-
-  const configured = normalizeBaseUrl(import.meta.env.VITE_API_URL);
-  if (configured) {
-    return configured;
-  }
-
-  if (typeof window !== 'undefined') {
     const hostname = window.location.hostname;
-    if (hostname.includes('web.app') || hostname.includes('firebaseapp.com') || hostname.includes('vercel.app')) {
-      return RAILWAY_API;
+    if (
+      hostname.includes('web.app')
+      || hostname.includes('firebaseapp.com')
+      || hostname.includes('localhost')
+      || hostname.includes('127.0.0.1')
+    ) {
+      return '/api';
     }
+  }
+
+  const configured = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+  if (configured && !configured.includes('onrender.com') && !configured.includes('railway.app')) {
+    return configured;
   }
 
   return '/api';
@@ -49,7 +26,7 @@ const axiosClient = axios.create({
   headers: {
     'Content-Type': 'application/json'
   },
-  timeout: 20000
+  timeout: 60000
 });
 
 axiosClient.interceptors.request.use(
@@ -67,7 +44,7 @@ axiosClient.interceptors.response.use(
   (response) => response.data,
   (error) => {
     if (error.response && error.response.status === 401) {
-      console.warn('API 401: se continúa sin redirigir al login (acceso temporal abierto).');
+      console.warn('API 401: acceso temporal abierto, no se redirige al login.');
     }
     const message = error.response?.data?.error?.message
       || (error.code === 'ECONNABORTED' ? 'El servidor tardó demasiado en responder. Intenta de nuevo.' : null)

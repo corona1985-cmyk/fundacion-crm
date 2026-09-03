@@ -1,0 +1,9 @@
+node_modules
+coverage
+tests
+.wwebjs_auth
+.wwebjs_cache
+*.xlsx
+rail_logs.txt
+rail_logs_full.txt
+.git

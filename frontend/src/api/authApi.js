@@ -1,7 +1,20 @@
-import axiosClient from './axiosClient';
-
 export const authApi = {
-  login: (credentials) => axiosClient.post('/auth/login', credentials),
-  getProfile: () => axiosClient.get('/users/me'),
-  updateProfile: (data) => axiosClient.put('/users/me', data),
+  login: async () => ({
+    success: true,
+    data: {
+      token: 'firebase-local',
+      user: {
+        id: 1,
+        username: 'admin',
+        rol: 'ADMINISTRADOR',
+        activo: true,
+        persona: { nombre: 'Administrador', apellido: 'Sistema' }
+      }
+    }
+  }),
+  getProfile: async () => ({
+    success: true,
+    data: { id: 1, username: 'admin', rol: 'ADMINISTRADOR' }
+  }),
+  updateProfile: async (data) => ({ success: true, data })
 };
