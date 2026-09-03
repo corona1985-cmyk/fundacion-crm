@@ -2,8 +2,7 @@ const { Usuario, Persona, sequelize } = require('../src/models');
 
 async function ensureAdmin() {
   const username = process.env.ADMIN_USERNAME || 'admin';
-  const password = process.env.ADMIN_PASSWORD || 'Admin123!';
-  const shouldReset = process.env.RESET_ADMIN_PASSWORD === 'true';
+  const password = process.env.ADMIN_PASSWORD || 'admin1234';
 
   let admin = await Usuario.findOne({ where: { username } });
 
@@ -11,16 +10,11 @@ async function ensureAdmin() {
     admin = await Usuario.findOne({ where: { rol: 'ADMINISTRADOR' } });
   }
 
-  if (admin && !shouldReset) {
-    console.log(`Usuario administrador '${admin.username}' ya existe.`);
-    return;
-  }
-
-  if (admin && shouldReset) {
+  if (admin) {
     admin.password_hash = password;
     admin.activo = true;
     await admin.save();
-    console.log(`Contraseña del administrador '${admin.username}' restablecida.`);
+    console.log(`Contraseña del administrador '${admin.username}' actualizada.`);
     return;
   }
 

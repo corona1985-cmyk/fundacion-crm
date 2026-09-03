@@ -16,7 +16,7 @@ async function createAdmin() {
   try {
     const adminEmail = process.env.ADMIN_EMAIL || 'admin@rompiendoparadigmas.org';
     const adminUsername = process.env.ADMIN_USERNAME || 'admin';
-    const adminPassword = process.env.ADMIN_PASSWORD || 'Admin123!';
+    const adminPassword = process.env.ADMIN_PASSWORD || 'admin1234';
     const adminCedula = process.env.ADMIN_CEDULA || '000-0000000-0';
 
     // Check if admin already exists
