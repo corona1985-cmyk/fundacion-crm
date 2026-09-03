@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Backend API for CRM Fundación Rompiendo Paradigmas - Modules 1-7",
   "main": "src/server.js",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
@@ -14,7 +17,8 @@
     "seed:academic": "node scripts/seed-academic-data.js",
     "seed:sponsors": "node scripts/seed-sponsors-data.js",
     "seed:financial": "node scripts/seed-financial-data.js",
-    "migrate:excel": "node scripts/migrate-excel-data.js"
+    "migrate:excel": "node scripts/migrate-excel-data.js",
+    "prestart": "node scripts/copy-db.js"
   },
   "keywords": [
     "crm",
@@ -44,13 +48,13 @@
     "pdfkit": "^0.19.1",
     "pg": "^8.12.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.3"
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.4",
     "sequelize-cli": "^6.6.2",
-    "sqlite3": "^5.1.7",
     "supertest": "^7.0.0"
   },
   "jest": {

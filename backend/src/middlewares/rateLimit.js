@@ -1,13 +1,12 @@
 const rateLimit = require('express-rate-limit');
 
-/**
- * Rate limiter middleware for login route to prevent brute-force attacks
- */
 const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5, // max 5 attempts per window
+  windowMs: 15 * 60 * 1000,
+  max: 20,
   standardHeaders: true,
   legacyHeaders: false,
+  skipSuccessfulRequests: true,
+  validate: { xForwardedForHeader: false },
   message: {
     success: false,
     error: {

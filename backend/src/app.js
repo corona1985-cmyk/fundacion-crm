@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const compression = require('compression');
 const path = require('path');
+const fs = require('fs');
 const errorHandler = require('./middlewares/errorHandler');
 
 // Module 1 Routes
@@ -33,6 +34,8 @@ const alarmaRoutes = require('./routes/alarmaRoutes');
 const reporteExportRoutes = require('./routes/reporteExportRoutes');
 
 const app = express();
+app.set('trust proxy', 1);
+
 
 // Configure CORS and Helmet with cross-origin compatibility
 app.use(helmet({
@@ -56,38 +59,60 @@ if (process.env.NODE_ENV !== 'test') {
 // Serve uploaded documents
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
+// Serve frontend dist bundle directly if present
+const frontendDistPath = path.join(__dirname, '../../frontend/dist');
+if (fs.existsSync(frontendDistPath)) {
+  app.use(express.static(frontendDistPath));
+}
+
 // Health Check
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'OK', timestamp: new Date() });
 });
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'OK', timestamp: new Date() });
+});
 
 // API Routes Mounting
-app.use('/auth', authRoutes);
-app.use('/users', userRoutes);
-app.use('/auditoria', auditRoutes);
-app.use('/audit', auditRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/auditoria', auditRoutes);
 
 // Module 2 Routes
-app.use('/universidades', universidadRoutes);
-app.use('/carreras', carreraRoutes);
-app.use('/ciclos', cicloRoutes);
-app.use('/becarios', becarioRoutes);
-app.use('/documentos', documentoRoutes);
-app.use('/upload', documentoRoutes);
+app.use('/api/universidades', universidadRoutes);
+app.use('/api/carreras', carreraRoutes);
+app.use('/api/ciclos', cicloRoutes);
+app.use('/api/becarios', becarioRoutes);
+app.use('/api/documentos', documentoRoutes);
+app.use('/api/upload', documentoRoutes);
 
 // Module 3 Routes
-app.use('/padrinos', padrinoRoutes);
-app.use('/instituciones', institucionRoutes);
-app.use('/aportes', aporteRoutes);
+app.use('/api/padrinos', padrinoRoutes);
+app.use('/api/instituciones', institucionRoutes);
+app.use('/api/aportes', aporteRoutes);
 
 // Module 4 Routes
-app.use('/pagos', pagoRoutes);
-app.use('/presupuesto', presupuestoRoutes);
-app.use('/reportes/financiero', reporteFinancieroRoutes);
+app.use('/api/pagos', pagoRoutes);
+app.use('/api/presupuesto', presupuestoRoutes);
+app.use('/api/reportes/financiero', reporteFinancieroRoutes);
 
 // Module 5 & 6 Routes
-app.use('/alarmas', alarmaRoutes);
-app.use('/reportes/export', reporteExportRoutes);
+app.use('/api/alarmas', alarmaRoutes);
+app.use('/api/reportes/export', reporteExportRoutes);
+if (process.env.ENABLE_WHATSAPP === 'true') {
+  const botRoutes = require('./routes/botRoutes');
+  app.use('/api/bot', botRoutes);
+}
+
+// Fallback SPA routing for frontend SPA
+if (fs.existsSync(frontendDistPath)) {
+  app.get('*', (req, res, next) => {
+    if (req.url.startsWith('/uploads') || req.url.startsWith('/bot/qr')) {
+      return next();
+    }
+    res.sendFile(path.join(frontendDistPath, 'index.html'));
+  });
+}
 
 // Centralized Error Handling Middleware
 app.use(errorHandler);

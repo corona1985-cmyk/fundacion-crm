@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Card, Statistic, Typography, Table, Tag, Spin } from 'antd';
+import { Row, Col, Card, Statistic, Typography, Table, Tag, Spin, message } from 'antd';
 import { UserOutlined, TeamOutlined, DollarOutlined, BellOutlined, ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { becarioApi } from '../api/becarioApi';
@@ -44,6 +44,7 @@ const DashboardPage = () => {
       ]);
     } catch (error) {
       console.error('Error loading dashboard:', error);
+      message.error('No se pudo conectar con el servidor. Verifica que el backend esté activo.', 6);
     } finally {
       setLoading(false);
     }
