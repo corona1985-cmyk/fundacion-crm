@@ -1,0 +1,850 @@
+{
+  "fuente": "Postulacion estudiantes (Respuestas).xlsx",
+  "anio": 2026,
+  "total_postulantes": 79,
+  "total_centros": 26,
+  "centros": {
+    "Centro Educativo San Francisco de Asís": [
+      {
+        "nombre": "Chris Albania Marine Estrella",
+        "centro_raw": "centro educativo San Francisco de Asís",
+        "carrera_aspirada": "Terapia Física.",
+        "otra_carrera": "Quiropráctica.",
+        "telefono": "809-489-7661",
+        "email": "Chrisalbaniamarineestrella@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Olimpiadas. Lecheton, staff en un maratón de no videntes, servicio social al homs. Clubes/asociaciones: Asociación de Scouts Dominicanos."
+      },
+      {
+        "nombre": "Helen Marie Uceta Rodríguez",
+        "centro_raw": "centro educativo San Francisco de Asís",
+        "carrera_aspirada": "Negocios internacionales",
+        "otra_carrera": "Comercio internacional",
+        "telefono": "829-510-1617",
+        "email": "Rodriguezhelen249@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Olimpiadas Orientaciones académicas Clubes/asociaciones: No aplica"
+      },
+      {
+        "nombre": "Glesmy María Pujols Espinal",
+        "centro_raw": "Centro Educativo San Francisco de Asís",
+        "carrera_aspirada": "Medicina",
+        "otra_carrera": "Derecho",
+        "telefono": "8293386573.0",
+        "email": "glesmy2009@gmail.com",
+        "promedio_liceo": 93.0,
+        "resumen": "Olimpiadas, gimnasia, tesorera del curso, asistente de maestros Ninguna"
+      }
+    ],
+    "Instituto Politécnico Industrial Don Bosco": [
+      {
+        "nombre": "Chanell Alexandra Emiliana Almarante Jiménez",
+        "centro_raw": "Instituto Politécnico Industrial Don Bosco",
+        "carrera_aspirada": "Marketing Digital y Diseño Multimedia",
+        "otra_carrera": "Psicología",
+        "telefono": "(829) 750-2213",
+        "email": "almarantechanelljimenez@gmail.com",
+        "promedio_liceo": 95.0,
+        "resumen": "Soy una estudiante aplicada y responsable con mis estudios además cuento con un excelente rendimiento académico desde que soy pequeña y cuento con reconocimientos y mellas que lo ameritan. Participó activamente en el club escolar de la ONU del centro educativo, donde colaboro en las actividades también elaboración de propuestas y apoyo en la organización de actividades. Además, he participado en las olimpiadas de Ciencias Sociales en donde e resultando ganador a nivel escolar"
+      },
+      {
+        "nombre": "Okelys Alexander Gil Sánchez",
+        "centro_raw": "Instituto Politécnico Industrial Don Bosco",
+        "carrera_aspirada": "Ingeniería Mecánica",
+        "otra_carrera": "Actualmente me gusta la Ingeniería Mecánica, pero como segunda opción sería Ingeniería en Software.",
+        "telefono": "849 425-1899",
+        "email": "okelys1415@gmail.com",
+        "promedio_liceo": 94.0,
+        "resumen": "En el centro educativo he desarrollado diversas actividades, educativas y sociales. En el ámbito de las actividades educativas, he realizado exposiciones, trabajos grupales, organización proyectos, al igual que participar activamente en las clases, investigaciones y demás. En el desarrollo de las actividades sociales, he colaborado en conjunto con mis compañeros al medio ambiente, he creado actividades recreativas y dinámicas y también he ayudado a personas a poder desarrolla"
+      },
+      {
+        "nombre": "Flordeliz Sánchez Duarte",
+        "centro_raw": "Instituto Politécnico Industrial Don Bosco",
+        "carrera_aspirada": "Negocios Internacionales",
+        "otra_carrera": "Ingeniería Industrial",
+        "telefono": "829-514-4532",
+        "email": "flordelizduarte14@gmail.com",
+        "promedio_liceo": 93.0,
+        "resumen": "Dentro del centro educativo participo en varias actividades tanto sociales como educativas. En lo social, formo parte del acto cívico, participo en días temáticos, convivencias, actividades religiosas y formativas, y en la celebración de fechas importantes. También me involucro en proyectos comunitarios y presentaciones artísticas, lo que me permite compartir con mis compañeros y fortalecer valores. En lo educativo, participo en exposiciones, proyectos grupales, ferias cientí"
+      }
+    ],
+    "Instituto Politécnico Industrial de Santiago (IPISA)": [
+      {
+        "nombre": "Brenny Melissa Guadalupe Espinal Abreu",
+        "centro_raw": "Instituto Politécnico Industrial de Santiago",
+        "carrera_aspirada": "Comunicación Audiovisual y Artes Cinematográficas",
+        "otra_carrera": "Publicidad mención Ilustración.",
+        "telefono": "8296897375.0",
+        "email": "brennyespinalabreu@gmail.com",
+        "promedio_liceo": 93.0,
+        "resumen": "Apoyar a mi curso como parte del comité estudiantil. Ayuda voluntaria en actividades escolares. Actualmente, participo el Servicio Militar Voluntario. Soy miembro de un Grupo Scout mediante el cual he participado en actividades de limpieza comunitaria. He colaborado como voluntario en el apoyo a organizaciones que trabajan con personas ciegas y discapacidad en general participando en actividades orientadas a su inclusión social y acompañamiento. Clubes/asociaciones: Asociació"
+      },
+      {
+        "nombre": "Kiara Torres Rodriguez",
+        "centro_raw": "Instituto Politécnico Industrial de Santiago IPISA",
+        "carrera_aspirada": "Ingenieria Civil",
+        "otra_carrera": "Arquitectura",
+        "telefono": "849-447-5700",
+        "email": "kiaratorres1528ss@gmail.com",
+        "promedio_liceo": 91.0,
+        "resumen": "Dentro del centro pertenezco al Club de Abanderados. Fuera del centro, los domingos soy parte del grupo de culto de niños en la iglesia. Me encargo de impartirles un sermón interactivo en donde puedan aprender sobre Dios de manera divertida."
+      },
+      {
+        "nombre": "Erick José Luna Vásquez",
+        "centro_raw": "Instituto Politécnico Industrial de Santiago (IPISA)",
+        "carrera_aspirada": "Ingienería en Matemática y Ciencias de Datos",
+        "otra_carrera": "Ingienería Electrónica",
+        "telefono": "849-424-2017",
+        "email": "erickjoselunavas30@gmail.com",
+        "promedio_liceo": 87.0,
+        "resumen": "Nasa Space App Challenge 2025 - Mención Impacto Global. Club de Ajedrez: Vicepresidente (2023) -1er. Lugar U17 Juegos Nacionales Salesianos -1er Lugar Copa María Inmaculada (2024) -3er Mejor Tablero Copa María Inmaculada (2025) Miembro del equipo de futbol. Festival de Teatro Escolar. -6to Lugar Categoría Infantil Obra \"Sueño de Mayo\" 3er lugar en Concurso de Cultura General Curso de Introducción a los Semiconductores (Impartido por La Fundación Escuela de Organización Indust"
+      }
+    ],
+    "Instituto Politécnico La Esperanza": [
+      {
+        "nombre": "Mariangel Aracena Rivas",
+        "centro_raw": "Instituto Politécnico La Esperanza",
+        "carrera_aspirada": "Ingeniería Nuclear",
+        "otra_carrera": "Ingeniería Mecánica",
+        "telefono": "829-726-2862",
+        "email": "mariangelaracena26@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "- - Clubes/asociaciones: -"
+      },
+      {
+        "nombre": "Edith América Lantigua Núñez",
+        "centro_raw": "Instituto Politécnico La Esperanza",
+        "carrera_aspirada": "Dirección Empresarial, concentración en Negocios Internacionales",
+        "otra_carrera": "Administración de empresas",
+        "telefono": "809-990-2410",
+        "email": "edithlantigu08@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Dentro de mi centro educativo, he mantenido una participación activa en espacios académicos, formativos y de liderazgo estudiantil. He participado en olimpiadas académicas a nivel distrital, regional y nacional, así como en áreas vinculadas a Lengua Española y Literatura, Ciencias Físicas y Formación Integral, Humana y Religiosa, fortaleciendo mi pensamiento crítico, y compromiso con la excelencia educativa. Además, actualmente me desempeño como presidenta del Club de Lideraz"
+      },
+      {
+        "nombre": "Zoe Cavaliere Familia",
+        "centro_raw": "Instituto Politécnico La esperanza",
+        "carrera_aspirada": "Comunicación audiovisual y artes cinematográficas.",
+        "otra_carrera": "Cosmetología",
+        "telefono": "829-266-3122",
+        "email": "Familiazoe77@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "participante de todas las ferias escolares, parte del comité estudiantil escolar general (vicepresidenta) ganadora entre los mejores 5 estudiantes hablando inglés. fuera del centro, ninguna, actualmente estoy trabajando y estudiando a la vez."
+      }
+    ],
+    "Instituto Politécnico Nuestra Señora de las Mercedes": [
+      {
+        "nombre": "Lisbeth Mariel Reyes Jiménez",
+        "centro_raw": "Instituto Politécnico Nuestra Señora de las Mercedes",
+        "carrera_aspirada": "Ingeniería Civil",
+        "otra_carrera": "Ingeniería en Ciencias de la Computación",
+        "telefono": "829-457-2123",
+        "email": "jlisbeth457@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "-Dentro del centro participo dirigiendo el grupo de las abanderadas en las actividades patrias celebradas en el centro como en las actividades que representan al centro ante el distrito y la regional. -Estudio Inglés los sábados -Pertenecía a una coral y participaba de campamentos en la parroquia Resurrección del Señor. -Entrenaba y pertenecía a un Club de Basketball y Voleibol en mi antigua comunidad (Los ciruelitos - Techado Cluci) Clubes/asociaciones: Club de Abanderadas"
+      },
+      {
+        "nombre": "Víctor José Badia Canario",
+        "centro_raw": "Instituto Politécnico Nuestra Señora de las Mercedes",
+        "carrera_aspirada": "Medicina",
+        "otra_carrera": "Fármaco-bioquímica",
+        "telefono": "8293678133.0",
+        "email": "victorjosebadia@polimercedes.edu.do",
+        "promedio_liceo": 96.0,
+        "resumen": "Club de liderazgo educativo (Debate) -Secretario del club -Entrenador de participantes del TRD/CND Servicio Militar Voluntario (SMV) Voluntario regional (PLERD) -Juez/Debatiente participante de Torneos Regionales de Debate (TRD) -Debatiente participante de Campeonatos Nacionales de Debate (CND) Clubes/asociaciones: Programa de Liderazgo Estudiantil del MINERD (Debate) PLERD-CELIDER"
+      },
+      {
+        "nombre": "Astrid Yamil Castillo Cruz",
+        "centro_raw": "Instituto Politécnico Nuestra Señora de las Mercedes",
+        "carrera_aspirada": "Dirección empresarial en la concentración de Negocios Internacionales",
+        "otra_carrera": "Contabilidad",
+        "telefono": "809-492-3432",
+        "email": "astrid.05castillo@gmail.com",
+        "promedio_liceo": 95.0,
+        "resumen": "Presentaciones y proyectos escolares En este momento no tengo ninguna actividad extracurricular Clubes/asociaciones: Club de medio ambiente del aula y al club de trabajos"
+      }
+    ],
+    "Instituto Politécnico Ramón Dubert Novo": [
+      {
+        "nombre": "Keisy María Soto De León",
+        "centro_raw": "Instituto Politécnico Ramón Dubert Novo",
+        "carrera_aspirada": "Derecho.",
+        "otra_carrera": "Ingeniería Civil.",
+        "telefono": "849-651-2309",
+        "email": "sotodeleonkeisymaria@gmail.com",
+        "promedio_liceo": 99.0,
+        "resumen": "Organización y planificación de actividades de efemérides importantes como el 27 de febrero, 12 de octubre, 26 de enero, etc. Además, realización de murales educativos y carteles para exposiciones en la explanada o en el multiusos y encargada de decoraciones de actividades importantes. Y capacitación de los participantes del Club de Liderazgo. Representante del centro en la ONALE, en campañas ambientales, en reuniones del distrito y el Modelo de las Naciones Unidas. Clubes/as"
+      },
+      {
+        "nombre": "Crystal Nuñez Infante",
+        "centro_raw": "Instituto Politecnico Ramon Dubert Novo",
+        "carrera_aspirada": "Medicina",
+        "otra_carrera": "Ingenieria",
+        "telefono": "8492572415.0",
+        "email": "delosangel3es@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Olimpiadas,competencias,Marchas. Visitas tecnicas, cursos tecnicos (idiomas), baile, pintura,canto. Clubes/asociaciones: Club de Liderazgo"
+      },
+      {
+        "nombre": "Ruth Esther Bueno St Fleur",
+        "centro_raw": "Instituto Politécnico Ramón Dubert Novo",
+        "carrera_aspirada": "Medicina",
+        "otra_carrera": "Odontología",
+        "telefono": "829-488-5391",
+        "email": "ruth02bueno@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Actividades que eh desarrollado. 1)Año escolar 2025-2026: Formó parte de la directiva del club de liderazgo como líder y coordinadores de actividades EFEMÉRIDES y de IMPACTO de las distintas áreas curriculares, pasando en primer lugar a la etapa distrital de las Olimpiadas Biblicas, representante del instituto Politécnico Ramón Dubert Novo y Distrito Educativo en la actual marcha por la patria del mismo año. Egresada de la Etapa Regional de Modelo de las Naciones Unidas MINUM"
+      }
+    ],
+    "Instituto Tecnológico México": [
+      {
+        "nombre": "Valery Nicole Castillo González",
+        "centro_raw": "Instituto Tecnológico México",
+        "carrera_aspirada": "Gestión Financiera y Auditoría",
+        "otra_carrera": "Contaduría",
+        "telefono": "829-830-6616",
+        "email": "valerycas0925@gmail.com",
+        "promedio_liceo": 99.0,
+        "resumen": "Participo activamente en la elaboración de carteles educativos, en actos cívicos y exposiciones, además de integrarme en trabajos en equipo y mantengo una participación constante en el aula Asisto al gimnasio y practico el idioma inglés de manera autodidacta a través de mi teléfono Clubes/asociaciones: No pertenezco a un club o asociación actualmente"
+      },
+      {
+        "nombre": "Maria Ysabel Guzmán Sánchez.",
+        "centro_raw": "Instituto Tecnológico México",
+        "carrera_aspirada": "Ciencias de la Computación.",
+        "otra_carrera": "Ingenieria en Sistemas.",
+        "telefono": "829 228 9835",
+        "email": "mariaysabelguzmansanchez@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Dentro del Instituto Tecnológico México participo activamente en varias actividades educativas y sociales. Me gusta colaborar en la creación de murales educativos y decorativos para los eventos y actos cívicos del centro. He representado al instituto en olimpiadas de matemáticas, llegando hasta la etapa distrital, y también en olimpiadas de ciencias naturales. Además, he hecho exposiciones en los actos cívicos, recientemente sobre el uso seguro de internet. He participado en "
+      },
+      {
+        "nombre": "Rosa Adela Jiménez Custodio",
+        "centro_raw": "Instituto Tecnológico México",
+        "carrera_aspirada": "Ingeniería Ambiental",
+        "otra_carrera": "Derecho",
+        "telefono": "8292308966.0",
+        "email": "adelagirasol.112@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Dentro del centro educativo participo activamente en diversas actividades educativas y sociales. Soy miembro del grupo de liderazgo educativo del centro y, además, imparto talleres sobre temas como redacción, oratoria, argumentación y resolución de problemas, los cuales ayudan a los estudiantes a desarrollar habilidades de comunicación, pensamiento crítico y toma de decisiones, preparándolos para enfrentar distintos retos tanto académicos como en su vida diaria. También ofrez"
+      }
+    ],
+    "Liceo Esperanza Milena Martínez": [
+      {
+        "nombre": "Arianny Guzmán Díaz",
+        "centro_raw": "Liceo Esperanza Milena Martínez",
+        "carrera_aspirada": "Medicina específicamente anestesióloga",
+        "otra_carrera": "Educación",
+        "telefono": "829-740-0195",
+        "email": "ariannyguzmandiaz8@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Ayudar en todas las actividades festivas, participar en destacadas e incontables veces en actividades del liceo y además participar activamente en clases Ayudo en las tareas del hojas, estudio, cuido a mis hermanos y sobre todo dedico tiempo a reforzar mis aprendizajes Clubes/asociaciones: Por ahora no pertenezco a ninguno pero si me gustaría estar en uno donde motiven a no es es a estudiar y a ser ellos mismo"
+      },
+      {
+        "nombre": "Edy Manuel Rozón Ramos",
+        "centro_raw": "Liceo: Esperanza Milena Martinez",
+        "carrera_aspirada": "Ingeniería en sistemas",
+        "otra_carrera": "Ingeniería Civil",
+        "telefono": "809-485-2489",
+        "email": "rozonedy@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Experimentos, exposiciones, manualidades, olimpiadas en el centro educativo, debates y uso de tecnología. Olimpiadas distritales y regionales en las áreas de ciencias naturales y ciencias sociales, participación en el consejo educativo de la (ONU) e investigadores de temas académicos. Clubes/asociaciones: Club de la paz."
+      },
+      {
+        "nombre": "Eunice Cruz Tapia",
+        "centro_raw": "Liceo Esperanza Milena Martínez",
+        "carrera_aspirada": "Me encanta la medicina y me encantaría estudiar visita médica, la cual es una carrera técnica y también una profesión.",
+        "otra_carrera": "Diseño de interiores, derecho y educación",
+        "telefono": "8294890858.0",
+        "email": "eunicecruz121007@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Implicación en eventos, participación en olimpiadas de distintas áreas, ayudar a mis compañeros cuando no comprenden alguna tarea o trabajo, colaborar en una jornada de limpieza y estar disponible para cualquier aporte, ayuda o contribución que necesiten de mi parte. Los fines de semana trabajo en mi propio emprendimiento y estudio para no atrasarme en nada. Clubes/asociaciones: Realmente por ahora a ninguno"
+      }
+    ],
+    "Liceo José Antonio Paulino": [
+      {
+        "nombre": "Crismailyn Altagracia Ortiz Perez",
+        "centro_raw": "Liceo José Antonio paulino",
+        "carrera_aspirada": "Dermatología",
+        "otra_carrera": "Contabilidad",
+        "telefono": "8295141138.0",
+        "email": "Ocrismailyn@gmail.com",
+        "promedio_liceo": 92.0,
+        "resumen": "Participo en clases, trabajos en grupo, exposiciones y actividades deportivas y culturales del liceo Hago tareas y paso tiempo con mis hermanos Clubes/asociaciones: No pertenezco a ningún club actualmente."
+      },
+      {
+        "nombre": "Mayelin Maria Vargas Jiménez",
+        "centro_raw": "Liceo José Antonio Paulino",
+        "carrera_aspirada": "Ingeniería civil",
+        "otra_carrera": "Psicología",
+        "telefono": "8299652571.0",
+        "email": "Mayelinmariavargasjimenez@gmail.com",
+        "promedio_liceo": 91.0,
+        "resumen": "Siempre participo en la mayoría de las actividades del centro educativo, como exposiciones, bailes, elaboración de murales y marchas. Me gusta involucrarme porque así puedo aprender más, compartir con mis compañeros y desarrollar mis habilidades tanto académicas como personales. Fuera del centro educativo, participo en actividades sociales como asistir a la iglesia y brindar apoyo a personas enfermas cuando tengo la oportunidad. Además, comparto con mi familia y comunidad, lo"
+      },
+      {
+        "nombre": "Kiana Altagracita López Hilario",
+        "centro_raw": "Liceo José Antonio paulino",
+        "carrera_aspirada": "Pediatría",
+        "otra_carrera": "Medicina",
+        "telefono": "809 703 6274",
+        "email": "Mariarodriguez3490@icloud.com",
+        "promedio_liceo": 90.0,
+        "resumen": "Marcha, olimpiadas Ninguna"
+      }
+    ],
+    "Liceo Onésimo Jiménez": [
+      {
+        "nombre": "Scarlet Nathalia Pérez Rodriguez",
+        "centro_raw": "Liceo Onésimo Jiménez",
+        "carrera_aspirada": "Administración de empresas",
+        "otra_carrera": "Negocios internacionales",
+        "telefono": "829-656-3975",
+        "email": "natperez0075@icloud.com",
+        "promedio_liceo": 93.0,
+        "resumen": "Feria de matemáticas y olimpiadas escolares estudio del idioma inglés en horario extracurricular Clubes/asociaciones: Club Los Pepines (CUPES)"
+      },
+      {
+        "nombre": "Oliver Henríquez Hernández",
+        "centro_raw": "Liceo Onésimo Jiménez",
+        "carrera_aspirada": "Marketing(Mercadeo)",
+        "otra_carrera": "Turísmo",
+        "telefono": "809-451-6341",
+        "email": "1henriquezoliver7@gmail.com",
+        "promedio_liceo": 91.0,
+        "resumen": "•Participar en clases y grupo •Compartir con compañeros •Ayudar en casa •Salir con amigos"
+      },
+      {
+        "nombre": "Rosibel Del Carmen García Genao",
+        "centro_raw": "Liceo Onésimo Jiménez",
+        "carrera_aspirada": "Deseo estudiar el área de bienes raíces, ya que es una profesión que me interesa desde pequeña.",
+        "otra_carrera": "Como segunda opción, me interesa la repostería, ya que tengo experiencia en esa área. También el áre",
+        "telefono": "8292836771.0",
+        "email": "rosibelgen05@gmail.com",
+        "promedio_liceo": 91.0,
+        "resumen": "Actualmente me enfoco en asistir a mis clases y cumplir con mis responsabilidades académicas dentro del centro educativo. Desarrollo un emprendimiento personal en el área de elaboración y venta de postres. Además, estoy finalizando un curso de primeros auxilios los fines de semana, donde he adquirido conocimientos básicos de atención de emergencias. Clubes/asociaciones: Club Social Primeros Auxilios"
+      }
+    ],
+    "Liceo Pedro María Espaillat": [
+      {
+        "nombre": "Reynira Nuñez Cruz",
+        "centro_raw": "Liceo Pedro María Espaillat",
+        "carrera_aspirada": "Licenciatura en Educación, mención Matemática.",
+        "otra_carrera": "Licenciatura en Contabilidad.",
+        "telefono": "8496503713.0",
+        "email": "reyniranunezcruz@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Soy presidenta del club de Matemáticas y formo parte del club de Psicología y del club STEAM. Además, soy ayudante en actividades de idiomas y de las áreas de Sociales, Lengua Española y Matemáticas. Cuento con cuatro años de participación activa en cursos formativos ofrecidos en mi centro educativo. También participo activamente en actividades y presentaciones académicas, así como en la programación y construcción de robots dentro del club STEAM. Actualmente realizó un curso"
+      },
+      {
+        "nombre": "Sheila Anae Díaz Vargas",
+        "centro_raw": "Liceo Pedro María Espaillat",
+        "carrera_aspirada": "Lenguas extranjeras",
+        "otra_carrera": "Comunicación social e interiorismo (diseños de interiores)",
+        "telefono": "8296924844.0",
+        "email": "Anaedzz004@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Participación activa dentro del club steam, periódico escolar, área de psicología, área de lenguas extranjeras, olimpiadas y eventos del centro y, actual presidenta de la promoción escolar. Miembro del abanderado municipal, curso de inglés y miembro del club de voleibol de sharo. Clubes/asociaciones: Club de Voleibol Sharo y Abanderado Municipal de Navarrete"
+      },
+      {
+        "nombre": "Cristopher Dayrell Rodríguez López",
+        "centro_raw": "Liceo Pedro María Espaillat",
+        "carrera_aspirada": "Medicina",
+        "otra_carrera": "Odontología",
+        "telefono": "809-516-0381",
+        "email": "yanelfimercadoperalta@gmail.com",
+        "promedio_liceo": 89.0,
+        "resumen": "He participado en Olimpiadas de Legua Española y matemáticas, siempre participo en labores colaborativas del Centro, entiéndase organización y cuidado del medio ambiente dentro y fuera del centro educativo, así como también soy presidente actual de mi aula y formo parte del Consejo estudiantil del Centro. Actualmente formo parte del Coro Juvenil del Iglesia Catolica de mi Municipio, suelo participar en actividades deportivas como juegos de basquetbol, y campamentos Juveniles "
+      }
+    ],
+    "Liceo Santo Hermano Miguel La Salle": [
+      {
+        "nombre": "Amy Melissa Díaz Luciano",
+        "centro_raw": "Liceso Escuela Santo Hermano Miguel",
+        "carrera_aspirada": "Psicología Infantojuvenil",
+        "otra_carrera": "Publicidad y medios digitales",
+        "telefono": "8492621431.0",
+        "email": "melissadiazluciano@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Vicepresidenta de curso, Miembro del comité estudiantil, Miembro del comité de Decoración (ferias, efemérides, etc). Durante mi transcurso en la Escuela he participado en convivencias escolares, olimpiadas, ferias, Días de Ciencias en otras instituciones. Además pude graduarme del CMV y 2 cursos de infotep el año pasado y, 1 más este año. Maestra Dominical infantil en la Iglesia CCM. Miembro de las Misioneritas, JVM. Maestra de Danza en el Centro de Desarrollo Integral (CDI-L"
+      },
+      {
+        "nombre": "Ashly Michelle Rodríguez Morrobel",
+        "centro_raw": "Liceo Escuela Santo Hermano Miguel",
+        "carrera_aspirada": "Arquitectura",
+        "otra_carrera": "Ingeniería civil",
+        "telefono": "8093232180.0",
+        "email": "Ashly080922@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Participación en feria científica Vóleibol Clubes/asociaciones: Club Mambuiche"
+      },
+      {
+        "nombre": "Lorena Rodríguez Rubiera",
+        "centro_raw": "Liceo Escuela Santo Hermano Miguel",
+        "carrera_aspirada": "Psicología",
+        "otra_carrera": "Literatura",
+        "telefono": "8494664979.0",
+        "email": "Lorenarodriguezrubiera@gmail.com",
+        "promedio_liceo": 94.0,
+        "resumen": "Completé dos cursos de INFOTEP impartidos dentro de la escuela. Asisto a New York Center, donde curso estudios de inglés como parte de mi formación complementaria fuera del centro educativo. Clubes/asociaciones: No pertenezco actualmente a clubes o asociaciones formales."
+      }
+    ],
+    "Politécnico Braulio Paulino": [
+      {
+        "nombre": "Irainy Céspedes García.",
+        "centro_raw": "Politécnico Braulio Paulino.",
+        "carrera_aspirada": "Lenguas Extranjeras.",
+        "otra_carrera": "Educación.",
+        "telefono": "+1 (809) 395- 1209",
+        "email": "irainycespedes1@gmail.com",
+        "promedio_liceo": 99.0,
+        "resumen": "• Participación en Olimpíadas Internas de Inglés (Spelling Bee) 11 de Abril 2023 y 16 de Abril del 2024. • Seleccionada por el centro como Familia ejemplar a los 30 días del mes de noviembre del año 2023. • Participación como presentadora de eventos en Olimpíadas Internas de Lectura y Escritura en los años escolares (2023- 2024) y (2024- 2025), y otras actividades del centro educativo. • Colaboración en la realización de carteles para actividades de impacto escolar. • Colabor"
+      },
+      {
+        "nombre": "Melani Beato Acosta",
+        "centro_raw": "Politécnico Braulio Paulino",
+        "carrera_aspirada": "Ingeniería en Ciencias de la Computación",
+        "otra_carrera": "Ingeniería en Desarrollo de Software",
+        "telefono": "(829) 460-3511",
+        "email": "melanibeatoacosta@gmail.com",
+        "promedio_liceo": 99.0,
+        "resumen": "Olimpiadas, actos conmemorativos de distintas indoles, presentaciones artísticas, actividades extracurrriculares de la carrera a la que pertenezco (informática). Participación en actividades comunitarias, apoyo en responsabilidades de la Quasi Parroquia (como en la liturgia) me gusta alimentar mi conocimiento a través de los libros, he participado en Hackatones como el de Nasa Spaces Apps Challenge. Además de colaboración con compañeros en actividades académicas cuando lo req"
+      },
+      {
+        "nombre": "Mayelin Ranielis Abreu Antonio",
+        "centro_raw": "Politécnico Braulio Paulino",
+        "carrera_aspirada": "Arquitectura.",
+        "otra_carrera": "Ingeniería Civil.",
+        "telefono": "829-482-9046",
+        "email": "rainielisabreu448@gmail.com",
+        "promedio_liceo": 95.0,
+        "resumen": "-Cumplimiento de las 360 horas laborales basado en el técnico profesional Gestión Administrativa y Tributaria. He participado en muchas Olimpiadas pero me eh sido reconocida con mérito en las siguientes: - Participé en las Olimpiadas Internas de Matemáticas y Ciencias de la Naturaleza en el año escolar 2021-2022. -En 2024 participe en la olimpiada Interna de Biología y en la Olimpiada distrital de Matemáticas.También me he mantenido participando activamente en las distintas o"
+      }
+    ],
+    "Politécnico Canadá": [
+      {
+        "nombre": "Hansel Marcelino López",
+        "centro_raw": "Politécnico Canadá",
+        "carrera_aspirada": "Todavía no lo tengo claro, pero me atrae Médicina o ingeniero en Software",
+        "otra_carrera": "Negocios internacionales o maestro de Educación Física",
+        "telefono": "829-841-5814",
+        "email": "hanselmarcelinolopez211@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "En el mes patriotico he sido los tres padres de la patria, El Trabucazo, el Fusilamiento de Sánchez y también la Trinitaria, también he participado en actividades del día de la poesia, etc. Participo en Modelos de las Naciones Unidas, olimpiadas como Matemáticas, Ciencias de la Naturaleza, Ciencias Sociales, Lengua Española y Formación Humana"
+      },
+      {
+        "nombre": "Sujeiri del Carmen Zarzuela Rodríguez",
+        "centro_raw": "Politécnico Canadá",
+        "carrera_aspirada": "Turismo",
+        "otra_carrera": "Odontología",
+        "telefono": "8094741645.0",
+        "email": "sujeirirodriguez0@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Participo cumpliendo con mis responsabilidades académicas y asistiendo regularmente a mis clases. Además, colaboro en la decoración de murales dentro del centro educativo, participo en desfiles organizados por el liceo y asisto a actividades y charlas que se realizan en colaboración con la Cooperativa San José. Fuera del centro educativo trabajo los fines de semana para ganar algo de dinero y apoyar mis necesidades. También colaboro con las responsabilidades del hogar y dedic"
+      },
+      {
+        "nombre": "Wendy Mateo Sánchez",
+        "centro_raw": "Politécnico Canadá",
+        "carrera_aspirada": "pediatra.",
+        "otra_carrera": "cirujana.",
+        "telefono": "(849)-531-2428",
+        "email": "wendymateosanchez42@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Creación de murales, participación de marchas. Participo en las charlas o eventos que ofrece la cooperativa y participación en jornada de saneamiento y jornada de reforestación."
+      }
+    ],
+    "Politécnico Luisa María Crisóstomo": [
+      {
+        "nombre": "Brenda De Jesus Vargas",
+        "centro_raw": "Politécnico María Luisa Crisostomo (los rieles)",
+        "carrera_aspirada": "Medicina",
+        "otra_carrera": "Astronomía y nutrición",
+        "telefono": "8493719944.0",
+        "email": "brendadejesusvargas27@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Maestría de ceremonia Rally patriótico del centro en el año 2025 Capitana de gimnasia rítmica durante 3 años consecutivos Proyectos de investigación Exposiciones Participación en cortometraje Participante en la olimpiada de inglés Parte del comité de curso Parte del comité ambiental estudiantil del centro Ganadora de la Feria Regional, organizada por centro de desarrollo y competitividad industrial (ProIndustria) Congresos Charlas educativas Participante en el proyecto de Bio"
+      },
+      {
+        "nombre": "Melany Chantelle Mercedes Salvador",
+        "centro_raw": "Politécnico Maria Luisa Crisostomo",
+        "carrera_aspirada": "Medicina (especialidad en Pediatría)",
+        "otra_carrera": "Nutrición",
+        "telefono": "829-233-0657",
+        "email": "melanysalvador231326@gmail.com",
+        "promedio_liceo": 95.0,
+        "resumen": "- Presidente de curso - Presidente del comité de promoción de curso - Integrante del comité general de promoción - Coordinadora (directora) del Comité Ambiental Estudiantil (CAE) - Presidente del Comité Ambiental de curso (CAC) - Directora del Modelo de las Naciones Unidas del centro 2025 - Informes de Investigación -Exposiciones y Monólogos - Maestrías de Ceremonias - Olimpiadas Nacional de Lectura y Escritura, ONALE, 3 años consecutivos (ganadora de 1er y 2do lugar etapa de"
+      },
+      {
+        "nombre": "Yerilin Gomez Valdez",
+        "centro_raw": "Politécnico María Luisa crisóstomo",
+        "carrera_aspirada": "Odontología",
+        "otra_carrera": "Cosmetología",
+        "telefono": "829-751-6644",
+        "email": "Yerilin15Gomez@gmail.com",
+        "promedio_liceo": 93.0,
+        "resumen": "clases, exposiciones, investigaciones, tareas, proyectos, olimpiadas, debates. celebraciones, trabajo en grupo,exámenes. Participación en jornadas de limpieza comunitaria para mantener los espacios libres de basura. Promover el cuidado del medio ambiente y la correcta disposición de los residuos. Clubes/asociaciones: Grupo juvenil de la iglesia"
+      }
+    ],
+    "Politécnico Maestra Elsa Brito de Domínguez": [
+      {
+        "nombre": "Yireimi Yinibet Collado Aracena",
+        "centro_raw": "Politecnico Maestra Elsa Brito De Domínguez",
+        "carrera_aspirada": "Marketing Digital",
+        "otra_carrera": "Diseño gráfico, arquitectura o psicología clínica",
+        "telefono": "8492082752.0",
+        "email": "yireimicollado@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Colaboración en las exposiciones extras dentro del centro, participó en ferias escolares, soy muy participativa en clases, dedicada y participó en los deportes de la escuela como el voleibol. Practico voleibol en un club deportivo, también estudio en un curso de inglés y sirvo en la iglesia Clubes/asociaciones: Club deportivo la delgada y la iglesia la delgada, también estudió en un instituto de inglés"
+      },
+      {
+        "nombre": "Marina Camila Nazarre Peña",
+        "centro_raw": "Politécnico Maestra Elsa Brito de Domínguez",
+        "carrera_aspirada": "Ingeniería en Computación/Sistemas",
+        "otra_carrera": "Licenciatura en Lenguas Extranjeras",
+        "telefono": "+1 (849) 264 2606",
+        "email": "Nazarremarina@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Colaboro en actividades como presentaciones, participo en los proyectos organizados por el centro (olimpiadas), apoyo en trabajos grupales con mis compañeros y asisto activamente en la decoración del centro. Participo en la pasantía del área de enfermería para fortalecer mi experiencia práctica, asisto en un emprendimiento familiar y tengo previsto iniciar cursos en línea con el objetivo de fortalecer mis habilidades profesionales. Clubes/asociaciones: Actualmente no pertenez"
+      },
+      {
+        "nombre": "Manny Dariel Rodriguez Valenzuela",
+        "centro_raw": "Politécnico Maestra Elsa Brito de Dominguez",
+        "carrera_aspirada": "Ing. en Sistemas Computacionales",
+        "otra_carrera": "Ing. en Telematica",
+        "telefono": "N/A",
+        "email": "dariboys746@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Técnico de Desarrollo de Aplicaciones Informáticas Servicio Militar Voluntario"
+      }
+    ],
+    "Politécnico Martina Mercedes Zouain": [
+      {
+        "nombre": "Oscar David Núñez Sánchez",
+        "centro_raw": "Politécnico Martina Mercedes Zouain",
+        "carrera_aspirada": "Ingeniería Telemática",
+        "otra_carrera": "Ciberseguridad",
+        "telefono": "8494303008.0",
+        "email": "oscarnunez.contacto@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Organizador de modelos internos de las naciones unidas Participante de olimpiadas en etapa centro - distrital Vicepresidente del Consejo Estudiantil Presidente de curso - 6toA Promotor de conocimientos a compañeros de grado Mediador de conflictos entre estudiantes Participante de la marcha escolar, entre otros Egresado de MINUME XV (Modelo Internacional de las Naciones Unidas) del PIERD. Voluntario de Honor, Servicio Militar Voluntario. Mención de Mejor Presentación, Hackatho"
+      },
+      {
+        "nombre": "Ramón Cruz Mejía",
+        "centro_raw": "Politécnico Martina Mercedes Zouain",
+        "carrera_aspirada": "Mediana",
+        "otra_carrera": "Licenciatura en enfermería.",
+        "telefono": "829-466-6444",
+        "email": "ramoncruzmejia13@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Soy presidente del curso, organizo actividades de mi área técnica la cual es Enfermería y contribuyó en demás actividades curriculares dentro del centro. El servicio Militar Voluntario, Curso de primeros auxilios, taller de sutura simple y taller de cura de heridas. Clubes/asociaciones: Por el momento no pertenezco a ningún club o asociación."
+      },
+      {
+        "nombre": "Chrisbellis Yoakaira Peña Trinidad.",
+        "centro_raw": "Politécnico Martina Mercedes Zouain.",
+        "carrera_aspirada": "Derecho.",
+        "otra_carrera": "Psicología.",
+        "telefono": "(829) 665 1625",
+        "email": "crisbeillispena@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "En el centro educativo, mi participación se caracteriza por ser una balanza entre mi compromiso personal y mi papel como guía de los demás, he podido canalizar mi disciplina por medio de varias presentaciones académicas en ámbitos como educación física, artística y social. Lo que más me entusiasma es ser el líder de mis módulos formativos, esto me impulsa a ser esa persona que asiste, define y coordina a mis compañeros. Mi objetivo no es generar dependencia, sino animarlos a "
+      }
+    ],
+    "Politécnico Mercedes Altagracia Cabral De León": [
+      {
+        "nombre": "Génesis Johanny Rodríguez Núñez",
+        "centro_raw": "Politécnico prof Mercedes Altagracia Cabral de León",
+        "carrera_aspirada": "Mercadeo",
+        "otra_carrera": "Enfermería",
+        "telefono": "849-272-9011",
+        "email": "gr2548119@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Participación en olimpiadas académicas de materias básicas como Lengua Española, Matemáticas, Ciencias Sociales y Ciencias Naturales, en las cuales me destaco por mi buen desempeño. Pasantía en Banreservas (específicamente en el área de servicio al cliente. También hice pasantía en PG contratistas (área de contabilidad). Clubes/asociaciones: Pertenezco a clubes tales como: club de baile (capitana), porristas y club de lectura."
+      },
+      {
+        "nombre": "Dariely Genao Morales",
+        "centro_raw": "Politécnico Profesora Mercedes Altagracia Cabral De León",
+        "carrera_aspirada": "Marketing digital",
+        "otra_carrera": "Contabilidad",
+        "telefono": "829-469-3239",
+        "email": "darielygenao@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Durante mi trayectoria escolar he participado activamente en diversas actividades académicas, sociales y formativas. He tomado parte en marchas estudiantiles y he expuesto diferentes temas dentro del ámbito curricular. Asimismo, he presentado proyectos a mis compañeros en el área de Gestión Administrativa y Tributaria, así como en la asignatura de Formación Integral Humana y Religiosa, fortaleciendo mis habilidades de investigación, comunicación y trabajo en equipo. De igual "
+      },
+      {
+        "nombre": "Dania Lantigua Ramos",
+        "centro_raw": "Politécnico Prof. Mercedes Altagracia Cabral de León",
+        "carrera_aspirada": "Contabilidad",
+        "otra_carrera": "Administración de empresas",
+        "telefono": "849-351-2785",
+        "email": "danialantiguaramos21@gmail.com",
+        "promedio_liceo": 95.0,
+        "resumen": "Actividades de baile, teatro y pasantia Curso de inglés todos los Sábados Clubes/asociaciones: Club de guías mayores"
+      }
+    ],
+    "Politécnico Mercedes Peña": [
+      {
+        "nombre": "Heisy Derlin Hilario Alvarado",
+        "centro_raw": "Politécnico Mercedes Peña",
+        "carrera_aspirada": "Enfermería",
+        "otra_carrera": "Medicina",
+        "telefono": "849-407-4263",
+        "email": "heisy0120@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Participación en pelotón de marcha, participación en ferias científicas, actos cívicos y actividades organizadas por el centro. Participó en actividades comunitarias, imparto clase de primeros auxilios y colaboró con mi familia en diferentes tareas. Clubes/asociaciones: Pelotón de marcha"
+      },
+      {
+        "nombre": "Jeilyn Michelle Vargas Santos",
+        "centro_raw": "Politécnico Mercedes Peña",
+        "carrera_aspirada": "Administración de Empresa",
+        "otra_carrera": "Música, artes escénicas",
+        "telefono": "849-657-3116",
+        "email": "Jeilynvargas3116@gmail.com",
+        "promedio_liceo": 95.0,
+        "resumen": "Participo en diversas olimpiadas, Participo en actividades relacionadas mayormente con canto Una de las actividades que más me gusta hacer fuera de la escuela es cantar. Aunque no voy a clases de canto, practico mucho en mi casa porque me gusta la música y me ayuda a expresarme. Clubes/asociaciones: Ninguna"
+      },
+      {
+        "nombre": "Lissette María Martínez Caba",
+        "centro_raw": "Politécnico Mercedes Peña",
+        "carrera_aspirada": "Ingeniería Industrial",
+        "otra_carrera": "Psicología Clínica",
+        "telefono": "829-439-0494",
+        "email": "lissettemartinez514@gmail.com",
+        "promedio_liceo": 94.0,
+        "resumen": "Marchas, actividades artísticas, dramatizaciones culturales, jornadas de labor social. Ninguna Clubes/asociaciones: Ninguna"
+      }
+    ],
+    "Politécnico Milagros Hernández": [
+      {
+        "nombre": "Angel Miguel Castillo Romero.",
+        "centro_raw": "Politécnico Milagros Hernández.",
+        "carrera_aspirada": "Docente de Ciencias Sociales.",
+        "otra_carrera": "Comunicación.",
+        "telefono": "8298393059.0",
+        "email": "angelcastillo12032008@gmail.com",
+        "promedio_liceo": 99.0,
+        "resumen": "Las actividades académicas y sociales en las que he participado incluyen mi participación en olimpiadas internas en las áreas de Lengua Española, Ciencias Sociales, Ciencias Naturales, Matemáticas, Inglés y Formación Integral. En el caso de la Olimpiada de Ciencias Sociales, tuve la oportunidad de representar a mi centro educativo en la etapa distrital. Asimismo, participé en la Olimpiada de Formación Integral, Humana y Religiosa, donde obtuve primer lugar en las categorías C"
+      },
+      {
+        "nombre": "Arwen Guzman Toribio",
+        "centro_raw": "Politécnico Milagros Hernández",
+        "carrera_aspirada": "Medicina, específicamente cardiología",
+        "otra_carrera": "Maestra de ciencias naturales",
+        "telefono": "8096642164.0",
+        "email": "toribioarwen@gmail.com",
+        "promedio_liceo": 99.0,
+        "resumen": "Actos en las distintas festividades escolares, talleres a nivel distrital, olimpiadas distritales, regionales y nacionales, modelos de las naciones unidas, siendo mesa y participante y ser parte de el voluntariado nacional de ZONA NORTE - CLUB DE LECTURA PÁGINAS QUE ABRAZAN Donaciones de tapas plásticas para niños con cancer y ser voluntaria del club de voluntarios rompelazonard, incentivando a la lectura y ayudando a los más necesitados con actividades sociales, así como jor"
+      },
+      {
+        "nombre": "Keiry Castro Reyes",
+        "centro_raw": "Politécnico Milagros Hernández",
+        "carrera_aspirada": "Derecho penal.",
+        "otra_carrera": "Psicología clínica.",
+        "telefono": "‪+1 (809) 734‑2663‬",
+        "email": "keirycastro.15@gmail.com",
+        "promedio_liceo": 99.0,
+        "resumen": "Charlas informativas sobre distintos temas de interés, tomamos inquietudes que tuvieran los estudiantes sobre el centro para ver en qué podía mejorar y cuáles cosas era obligación del distrito educativo, embellecimiento de áreas verdes (jardinería), orientación a los jóvenes en el acto cívico sobre el desarrollo personal y espiritual. He participado en las distintas olimpiadas (lectura y escritura, ciencias físicas) representando a mi centro educativo a nivel distrital y regi"
+      }
+    ],
+    "Politécnico Padre Zegrí": [
+      {
+        "nombre": "Karla Tavares Del Rosario",
+        "centro_raw": "Politécnico Padre Zegrí",
+        "carrera_aspirada": "Biología",
+        "otra_carrera": "Ingeniería en Tecnología de Alimentos",
+        "telefono": "849-354-3295",
+        "email": "karlatavarezdelrosario3@gmail.com",
+        "promedio_liceo": 100.0,
+        "resumen": "Participo en olimpiadas, pertenezco a la pastoral juvenil, soy presidenta del consejo estudiantil y participo en diferentes ferias educativas. Practico el piano de manera autodidacta y trotar. Clubes/asociaciones: Ninguna"
+      },
+      {
+        "nombre": "Emely Crisbell Abreu Ortiz",
+        "centro_raw": "politecnico Padre Zegri",
+        "carrera_aspirada": "Medicina",
+        "otra_carrera": "Psicología",
+        "telefono": "8494439160.0",
+        "email": "@emelycrisbellabreuortiz",
+        "promedio_liceo": 98.0,
+        "resumen": "Exposiciones, ferias, participación en charlas y en el acto cívico , ayuda sociales… Estudio inglés, voy a la iglesia, gimnasio e hice un curso de oratoria Clubes/asociaciones: No participo en uno actualmente"
+      },
+      {
+        "nombre": "María Raquel Caba Pérez",
+        "centro_raw": "Politécnico Padre Zegrí",
+        "carrera_aspirada": "Psicología",
+        "otra_carrera": "Gestión financiera y auditoría o marketing",
+        "telefono": "+1 829-337-9546",
+        "email": "cabaxmariaraquel@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Club de la Paz (2024-2025), Olimpiadas internas de inglés, lengua española, matemáticas, naturales, formación humana y a nivel distrital naturales y español. Pastoral Juvenil Mercerdaria (JUMER), campamento de robótica (2025) Gimnasio, practicas de voleibol, aprendizaje de inglés y francés de forma autónoma, cursos en infotep Clubes/asociaciones: Club de voleibol Bella Vista/Suelo Duro"
+      }
+    ],
+    "Politécnico Profesor Miguel Ángel Guzmán": [
+      {
+        "nombre": "Juana Dilenny Núñez Muñoz",
+        "centro_raw": "Politécnico Profesor Miguel Ángel Guzmán",
+        "carrera_aspirada": "Medicina",
+        "otra_carrera": "Administración hotelera y turismo",
+        "telefono": "809-656-7716",
+        "email": "juanadilennyn@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Participación en olimpiadas de inglés y matemáticas a nivel del centro y distrital. Curso de inglés y marketing digital"
+      },
+      {
+        "nombre": "Yoanny Peralta",
+        "centro_raw": "Politécnico Profesor Miguel Ángel Guzmán.",
+        "carrera_aspirada": "Administración de Empresas.",
+        "otra_carrera": "Derecho",
+        "telefono": "849-465-8357",
+        "email": "yoannydisla68@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Participo en actividades académicas como olimpiadas de distintas áreas. Actualmente soy abanderado, destacándome como subcapitana del equipo. Además, formo parte del comité ambiental y de aula, participo en simulaciones de Naciones Unidas, exposiciones y en diversos proyectos escolares. Participo activamente en actividades religiosas y sociales, formando parte de la pastoral juvenil, donde colaboro en dinámicas, encuentros y actividades comunitarias. También participo en el c"
+      },
+      {
+        "nombre": "Thalina Mariangel Cabrera Genao",
+        "centro_raw": "Politecnico Prof. Miguel Ángel Guzmán",
+        "carrera_aspirada": "Tripulante de Cabina de Pasajeros (TCP)",
+        "otra_carrera": "Negocios Internacionales",
+        "telefono": "829-454-0612",
+        "email": "Cabrerathalina@gmail.com",
+        "promedio_liceo": 92.0,
+        "resumen": "-Estudiante sobresaliente en calificaciones -Co-capitana del grupo de abanderadas popmag durante 2 años consecutivos -miembro del comité ambiental -Participación en actividades cívicas y eventos escolares •Apoyo constante en las responsabilidades del hogar •Compartir y fortalecer la convivencia familiar •Interés en el aprendizaje autónomo mediante recursos digitales •Uso del tiempo libre en actividades personales y recreativas Clubes/asociaciones: Aunque no pertenezco a clube"
+      }
+    ],
+    "Politécnico Profesora Rafaela Pérez": [
+      {
+        "nombre": "Fioribel Mercado Espinal",
+        "centro_raw": "Politécnico Profesora Rafaela Pérez",
+        "carrera_aspirada": "Ingeniería Informática o Ingeniería Industrial",
+        "otra_carrera": "Arquitectura o Diseño de Interiores",
+        "telefono": "849-252-1324",
+        "email": "fiordalizaespinal112@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Participación en proyectos, concursos del centro o presentaciones escolares Ninguna"
+      },
+      {
+        "nombre": "Nayelhy Otniely Taveras Veras",
+        "centro_raw": "Politécnico profesora Rafaela Pérez",
+        "carrera_aspirada": "Diseño de interiores",
+        "otra_carrera": "Arquitectura",
+        "telefono": "849-886-4310",
+        "email": "nayelhytaveras@gmail.com",
+        "promedio_liceo": 97.0,
+        "resumen": "Bailes para actividades, es posiciones y charlas referentes a temas de relevancia Clases de ballet y de folklore Clubes/asociaciones: Ballet contempora"
+      },
+      {
+        "nombre": "Andreca Fabela Vargas Martínez",
+        "centro_raw": "Politécnico Profesora Rafaela Pérez",
+        "carrera_aspirada": "Licenciatura en Arquitectura",
+        "otra_carrera": "Diseño de interiores",
+        "telefono": "8094564204.0",
+        "email": "andrecavargas313@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Servicio Militar Voluntario y ONU ninguna"
+      },
+      {
+        "nombre": "Emely María Rodríguez Ramírez",
+        "centro_raw": "Politécnico Profesora Rafaela Pérez",
+        "carrera_aspirada": "Medicina. (Especialidad en Neurocirujana o Otorrinolaringóloga)",
+        "otra_carrera": "-Abogada. -Comunicación.",
+        "telefono": "8297915621.0",
+        "email": "emelyrod250@gmail.com",
+        "promedio_liceo": 95.0,
+        "resumen": "-Presentaciones debido a fecha de la independencia. -Discursar. -Olimpiadas. -Baile. -Curso de enfermería dirigido por el 911 (Terminado)"
+      }
+    ],
+    "Politécnico Rafaela Marrero Paulino": [
+      {
+        "nombre": "Dariel Diaz",
+        "centro_raw": "Politécnico Rafaela Marrero Paulino",
+        "carrera_aspirada": "Lenguas Modernas (inglés)",
+        "otra_carrera": "Arquitectura",
+        "telefono": "8498151478.0",
+        "email": "d3523673@gmail.com",
+        "promedio_liceo": 98.0,
+        "resumen": "Participantes de la ONU Curso primeros auxilios Clubes/asociaciones: Club de turismo"
+      },
+      {
+        "nombre": "Daniela Vargas Estrella",
+        "centro_raw": "Politécnico Rafaela Marrero Paulino",
+        "carrera_aspirada": "Ciencias Políticas",
+        "otra_carrera": "Psicología",
+        "telefono": "8492504591.0",
+        "email": "danielavargasestrella@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Ferias, desarrollo de las efemérides, actividades culturales. Horas sociales, horas forestales, servicio militar voluntario Clubes/asociaciones: Club de paz, club de ajedrez"
+      },
+      {
+        "nombre": "Elayne Medina Minaya",
+        "centro_raw": "Politécnico Rafaela Marrero Paulino",
+        "carrera_aspirada": "Medicina Área especializada pediatria",
+        "otra_carrera": "Bioanalisis",
+        "telefono": "849-503-9277",
+        "email": "elaynemedina1@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Olimpiadas, Conmemoraciones, Feria de importación y exportación. Pasantía en los centros de trabajo, Marcha Escolar, Olimpiadas y Competencias de deportes Clubes/asociaciones: Junta Del Centro PRMP"
+      }
+    ],
+    "Politécnico Ramona Altagracia Tejada Marte": [
+      {
+        "nombre": "Brisleidy Altagracia Pichardo Cabrera",
+        "centro_raw": "Politecnico Ramona Altagracia Tejada Marte",
+        "carrera_aspirada": "Licienciatura en Turismo",
+        "otra_carrera": "Licienciarura en Psicologia",
+        "telefono": "8092997461.0",
+        "email": "brisleidypichardo@gmail.com",
+        "promedio_liceo": 92.0,
+        "resumen": "Olimpiadas, Maestra de Ceremonia, Ferias, Decoraciones, Emprendimiento, Huerto escolar Acompaño a docentes de otras escuelas ayudando a los niños a leer en los dias que no hay docencia y tambien ayudar a personas de tercera edad en un lugar de acogida Clubes/asociaciones: Club Ahorri"
+      },
+      {
+        "nombre": "Lucy María Rojas Grullón",
+        "centro_raw": "Politécnico Ramona Altagracia Tejada Marte",
+        "carrera_aspirada": "Bioquímica",
+        "otra_carrera": "Psicología escolar",
+        "telefono": "849-450-2767",
+        "email": "rojaslussy66@gmail.com",
+        "promedio_liceo": 90.0,
+        "resumen": "Organización de diversas actividades tales como: El encuentro entre cultura, la independencia nacional, drama de la muerte y pasión de cristo, entre otras. Gracias a mi liderazgo, encabezo dichas actividades, como presentadora general. Participación en las olimpiadas, Lengua Española, Formación Humana, Lectura y Escritura, Ciencias de la Naturaleza. Clubes/asociaciones: Represento diversas funciones en la iglesia Cátolica, parroquia Santa Cruz."
+      },
+      {
+        "nombre": "Yunerlyn Shanell Peña Ulloa",
+        "centro_raw": "Politecnico Prof Ramona Altagracia Tejada Marte",
+        "carrera_aspirada": "Lenguas extranjeras",
+        "otra_carrera": "Tecnico en Tripulante de cabina",
+        "telefono": "809-863-7315",
+        "email": "Yunerlyn29@gmail.com",
+        "promedio_liceo": 88.0,
+        "resumen": "Competencias de juegos, en ferias, en hacer vestuarios reciclados, en el panamericanos,las veces que participe en diferentes exposiciones de español,sociales, y arte y muchas más. Participe en las olimpiadas de inglés, también soy pasante en el jardín botanico ect. Clubes/asociaciones: No, no pertenezco a ningunas."
+      }
+    ],
+    "Politécnico Ulises Francisco Espaillat (UFE)": [
+      {
+        "nombre": "Juevelyn Yokaira Estévez García",
+        "centro_raw": "Politécnico Ulises Francisco Espaillat",
+        "carrera_aspirada": "Ingeniería en Sistema",
+        "otra_carrera": "Negocios Internacionales",
+        "telefono": "8293828969.0",
+        "email": "juevelyng@gmail.com",
+        "promedio_liceo": 96.0,
+        "resumen": "Olimpiadas educativas Ferias educativas actividades de ambientación escolar Reforestación del parque Central de Santiago Clubes/asociaciones: --------------"
+      },
+      {
+        "nombre": "Lisanny De La Rosa García",
+        "centro_raw": "Politécnico Ulises Francisco Espaillat (UFE)",
+        "carrera_aspirada": "Negocios Internacionales",
+        "otra_carrera": "Administración de Empresa",
+        "telefono": "829-655-2982",
+        "email": "delissanny61@gmail.com",
+        "promedio_liceo": 94.0,
+        "resumen": "Olimpiadas Educativas Miembro del Equipo de Baton Ballet de Politécnico Ambientaciones del Centro Educativos Parte artística (Poesías coreadas en el Centro Educativo) --------- Clubes/asociaciones: ----------"
+      },
+      {
+        "nombre": "Daniel Sarita Peña",
+        "centro_raw": "Politécnico Ulises Francisco Espaillat (UFE)",
+        "carrera_aspirada": "Ingeniería Eléctrica",
+        "otra_carrera": "Dibujo Eléctrico",
+        "telefono": "809-661-6024",
+        "email": "saritapenadaniel@gmail.com",
+        "promedio_liceo": 93.0,
+        "resumen": "Olimpiadas Educativas Ambientación del centro educativo Actividades deportivas, Torneo de Baloncesto Escolar Limpieza del entorno escolar Club deportivo de baloncesto del politécnico Ulises Francisco Espaillat. Deportiva, Club Los Idóneos ( Baloncesto). Miembro activo de la Parroquia Nuestra Señora de Fátima, EL Ejido, Santiago. Reforestación del Parque Central Adecuación de la planta física DE LA defensa civil de Santiago Clubes/asociaciones: Deportiva, Club Los Idóneos ( Ba"
+      }
+    ]
+  }
+}

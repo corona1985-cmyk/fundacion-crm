@@ -1,12 +1,8 @@
-import axiosClient from './axiosClient';
+import { exportExcelBlob, exportExcelReport, exportPdfBlob, exportPdfReport } from '../utils/reportExport';
 
 export const reporteApi = {
-  exportExcel: (tipo = 'becarios') => {
-    const token = localStorage.getItem('token');
-    window.open(`/api/reportes/export/excel?tipo=${tipo}&token=${token}`, '_blank');
-  },
-  exportPdf: (tipo = 'becarios') => {
-    const token = localStorage.getItem('token');
-    window.open(`/api/reportes/export/pdf?tipo=${tipo}&token=${token}`, '_blank');
-  }
+  exportExcel: async (tipo = 'becarios') => exportExcelReport(tipo),
+  exportPdf: async (tipo = 'becarios') => exportPdfReport(tipo),
+  downloadExcel: async (tipo = 'becarios') => exportExcelBlob(tipo),
+  downloadPdf: async (tipo = 'becarios') => exportPdfBlob(tipo)
 };

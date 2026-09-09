@@ -22,6 +22,14 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function uniqueRows(rows = []) {
+  const map = new Map();
+  rows.forEach((row) => {
+    map.set(String(row.id ?? `${Math.random()}`), row);
+  });
+  return Array.from(map.values());
+}
+
 function emptyStore() {
   return {
     becarios: [],
@@ -42,7 +50,7 @@ async function readFirestore() {
   let hasData = false;
   await Promise.all(COLLECTIONS.map(async (name) => {
     const snap = await getDocs(collection(db, name));
-    next[name] = snap.docs.map((item) => ({ id: Number(item.id) || item.id, ...item.data() }));
+    next[name] = uniqueRows(snap.docs.map((item) => ({ id: Number(item.id) || item.id, ...item.data() })));
     if (!snap.empty) hasData = true;
   }));
   return hasData ? next : null;
@@ -74,19 +82,14 @@ export async function loadStore() {
 
   loadPromise = (async () => {
     try {
-      const remote = await readFirestore();
-      if (remote) {
-        cache = remote;
-        return cache;
-      }
       cache = clone(bundled);
       seedFirestore(cache).catch((error) => {
         console.warn('No se pudo sembrar Firestore, se usa el dato local:', error.message);
       });
       return cache;
     } catch (error) {
-      console.warn('Firestore no disponible, usando datos embebidos:', error.message);
-      cache = clone(bundled);
+      console.warn('No se pudieron cargar los datos embebidos:', error.message);
+      cache = emptyStore();
       return cache;
     }
   })();

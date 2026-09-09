@@ -1,33 +1,24 @@
 import React, { useState } from 'react';
 import { Card, Row, Col, Typography, Button, Space, Divider, message, Tag } from 'antd';
-import { FileExcelOutlined, FilePdfOutlined, DownloadOutlined, AuditOutlined, TrophyOutlined, TeamOutlined, DollarOutlined } from '@ant-design/icons';
-import axiosClient from '../api/axiosClient';
+import { FileExcelOutlined, FilePdfOutlined, DownloadOutlined, AuditOutlined, TrophyOutlined, TeamOutlined, DollarOutlined, FileTextOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
+import { reporteApi } from '../api/reporteApi';
 
 const { Title, Text, Paragraph } = Typography;
 
 const ReportesPage = () => {
   const [downloading, setDownloading] = useState(null);
+  const navigate = useNavigate();
 
   const handleDownload = async (tipo, format) => {
     const key = `${tipo}-${format}`;
     setDownloading(key);
     try {
-      const response = await axiosClient.get(`/reportes/export/${format}`, {
-        params: { tipo },
-        responseType: 'blob'
-      });
-
-      const blob = new Blob([response.data], {
-        type: format === 'pdf' ? 'application/pdf' : 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-      });
-
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', `Reporte_${tipo}_${new Date().toISOString().slice(0, 10)}.${format === 'pdf' ? 'pdf' : 'xlsx'}`);
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
+      if (format === 'pdf') {
+        await reporteApi.exportPdf(tipo);
+      } else {
+        await reporteApi.exportExcel(tipo);
+      }
       message.success(`Reporte de ${tipo} en ${format.toUpperCase()} descargado correctamente`);
     } catch (err) {
       message.error('Error al generar el reporte descargable');
@@ -72,6 +63,25 @@ const ReportesPage = () => {
         </Title>
         <Text type="secondary">Genera e imprime reportes ejecutivos e itinerarios oficiales en formato Excel y PDF.</Text>
       </div>
+
+      <Card
+        style={{ marginBottom: 16, border: '1px solid #ffccc7', background: '#fff7f7' }}
+        title={
+          <Space>
+            <FileTextOutlined style={{ color: '#E53935' }} />
+            <span>Reporte 101 — Graduaciones por Centro (letras grandes)</span>
+            <Tag color="red">NUEVO</Tag>
+          </Space>
+        }
+      >
+        <Paragraph type="secondary" style={{ marginBottom: 12 }}>
+          Genera el informe oficial por politécnico/liceo: premiado(s), director, terna y resumen,
+          fecha/lugar, becados actuales, egresados universitarios y honores. Puedes imprimirlo a PDF y guardarlo.
+        </Paragraph>
+        <Button type="primary" danger icon={<TrophyOutlined />} onClick={() => navigate('/reportes/101')}>
+          Abrir generador Reporte 101
+        </Button>
+      </Card>
 
       <Row gutter={[16, 16]}>
         {reportModules.map((item, idx) => (

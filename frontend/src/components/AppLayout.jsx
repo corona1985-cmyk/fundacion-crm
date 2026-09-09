@@ -13,7 +13,8 @@ import {
   FundOutlined,
   DownloadOutlined,
   SafetyCertificateOutlined,
-  SettingOutlined
+  SettingOutlined,
+  ProjectOutlined
 } from '@ant-design/icons';
 import { useNavigate, useLocation, Outlet } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -33,11 +34,13 @@ const AppLayout = () => {
   const menuItems = [
     { key: '/dashboard', icon: <DashboardOutlined />, label: 'Dashboard' },
     { key: '/becarios', icon: <UserOutlined />, label: 'Becarios' },
+    { key: '/kanban', icon: <ProjectOutlined />, label: 'Kanban' },
     { key: '/padrinos', icon: <TeamOutlined />, label: 'Padrinos e Inst.' },
     { key: '/financiero', icon: <DollarOutlined />, label: 'Gestión Financiera' },
     { key: '/presupuesto', icon: <FundOutlined />, label: 'Presupuesto' },
     { key: '/alarmas', icon: <BellOutlined />, label: 'Centro de Alarmas' },
     { key: '/reportes', icon: <DownloadOutlined />, label: 'Reportes y Export' },
+    { key: '/reportes/101', icon: <TrophyOutlined />, label: 'Reporte 101' },
     ...(hasRole('ADMINISTRADOR') ? [
       { key: '/usuarios', icon: <SettingOutlined />, label: 'Usuarios' },
       { key: '/auditoria', icon: <SafetyCertificateOutlined />, label: 'Auditoría' }

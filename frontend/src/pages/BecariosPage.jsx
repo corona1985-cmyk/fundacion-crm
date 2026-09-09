@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Table, Card, Button, Input, Select, Space, Tag, Modal, Form, message, Typography, Popconfirm } from 'antd';
 import { PlusOutlined, SearchOutlined, EyeOutlined, EditOutlined, DeleteOutlined, FileExcelOutlined, FilePdfOutlined, PrinterOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
@@ -11,11 +11,14 @@ const { Option } = Select;
 
 export const BecariosPage = () => {
   const [becarios, setBecarios] = useState([]);
+  const [allBecarios, setAllBecarios] = useState([]); // for itinerary print
   const [universidades, setUniversidades] = useState([]);
   const [carreras, setCarreras] = useState([]);
   const [loading, setLoading] = useState(false);
   const [pagination, setPagination] = useState({ current: 1, pageSize: 10, total: 0 });
   const [filters, setFilters] = useState({ search: '', universidad_id: null, estado_beca: null });
+  const [searchText, setSearchText] = useState('');
+  const searchDebounceRef = useRef(null);
 
   const [modalVisible, setModalVisible] = useState(false);
   const [itinerarioVisible, setItinerarioVisible] = useState(false);
@@ -82,6 +85,18 @@ export const BecariosPage = () => {
     }
   };
 
+  // Load all becarios (no pagination) for itinerary print modal
+  const loadAllBecarios = async () => {
+    try {
+      const response = await becarioApi.getAll({ page: 1, limit: 500 });
+      if (response.success) {
+        setAllBecarios(response.data.becarios || []);
+      }
+    } catch (error) {
+      console.error('Error cargando todos los becarios:', error);
+    }
+  };
+
   const loadCatalogs = async () => {
     try {
       const [uRes, cRes] = await Promise.all([
@@ -97,11 +112,22 @@ export const BecariosPage = () => {
 
   useEffect(() => {
     loadCatalogs();
+    loadAllBecarios();
   }, []);
 
   useEffect(() => {
     loadBecarios(1);
   }, [filters]);
+
+  // Debounced search: waits 400ms after the user stops typing before firing API
+  const handleSearchChange = (e) => {
+    const val = e.target.value;
+    setSearchText(val);
+    if (searchDebounceRef.current) clearTimeout(searchDebounceRef.current);
+    searchDebounceRef.current = setTimeout(() => {
+      setFilters(prev => ({ ...prev, search: val }));
+    }, 400);
+  };
 
   const handleTableChange = (newPagination) => {
     loadBecarios(newPagination.current);
@@ -121,7 +147,9 @@ export const BecariosPage = () => {
         carrera_id: record.carrera_id,
         centro_origen: record.centro_origen,
         estado_beca: record.estado_beca,
-        promedio_general: record.promedio_general
+        promedio_general: record.promedio_general,
+        indice_cuatrimestral: record.indice_cuatrimestral,
+        matricula: record.matricula
       });
     } else {
       form.resetFields();
@@ -190,11 +218,18 @@ export const BecariosPage = () => {
     {
       title: 'Índice (GPA)',
       dataIndex: 'promedio_general',
-      render: (gpa) => (
+      render: (gpa, record) => (
         gpa !== null && gpa !== undefined ? (
-          <Tag color={parseFloat(gpa) >= 2.50 ? 'green' : 'volcano'}>
-            {parseFloat(gpa).toFixed(2)}
-          </Tag>
+          <Space size={4}>
+            <Tag color={parseFloat(gpa) >= 3.2 ? 'green' : parseFloat(gpa) >= 2.5 ? 'orange' : 'volcano'}>
+              {parseFloat(gpa).toFixed(2)}
+            </Tag>
+            {record.indice_cuatrimestral != null && (
+              <Tag color={parseFloat(record.indice_cuatrimestral) >= 3.2 ? 'blue' : 'orange'}>
+                C: {parseFloat(record.indice_cuatrimestral).toFixed(2)}
+              </Tag>
+            )}
+          </Space>
         ) : (
           <Tag color="cyan">Nuevo Ingreso</Tag>
         )
@@ -253,10 +288,30 @@ export const BecariosPage = () => {
           >
             Imprimir Itinerario Graduaciones
           </Button>
-          <Button icon={<FileExcelOutlined />} onClick={() => reporteApi.exportExcel('becarios')}>
+          <Button
+            icon={<FileExcelOutlined />}
+            onClick={async () => {
+              try {
+                await reporteApi.exportExcel('becarios');
+                message.success('Excel de becarios descargado');
+              } catch (error) {
+                message.error(error.message || 'No se pudo exportar el Excel');
+              }
+            }}
+          >
             Excel
           </Button>
-          <Button icon={<FilePdfOutlined />} onClick={() => reporteApi.exportPdf('becarios')}>
+          <Button
+            icon={<FilePdfOutlined />}
+            onClick={async () => {
+              try {
+                await reporteApi.exportPdf('becarios');
+                message.success('PDF de becarios descargado');
+              } catch (error) {
+                message.error(error.message || 'No se pudo exportar el PDF');
+              }
+            }}
+          >
             PDF
           </Button>
           {hasRole('ADMINISTRADOR', 'COORDINADOR') && (
@@ -274,7 +329,9 @@ export const BecariosPage = () => {
             prefix={<SearchOutlined />}
             style={{ width: 260 }}
             allowClear
-            onChange={(e) => setFilters(prev => ({ ...prev, search: e.target.value }))}
+            value={searchText}
+            onChange={handleSearchChange}
+            onClear={() => { setSearchText(''); setFilters(prev => ({ ...prev, search: '' })); }}
           />
           <Select
             placeholder="Filtrar por Universidad"
@@ -365,8 +422,14 @@ export const BecariosPage = () => {
                   <Option value="FINALIZADA">Finalizada</Option>
                 </Select>
               </Form.Item>
-              <Form.Item name="promedio_general" label="Índice Acumulado (GPA)">
-                <Input type="number" step="0.01" />
+              <Form.Item name="promedio_general" label="Índice Acumulado (mínimo 3.20)">
+                <Input type="number" step="0.01" min="0" max="4" />
+              </Form.Item>
+              <Form.Item name="indice_cuatrimestral" label="Índice Cuatrimestral">
+                <Input type="number" step="0.01" min="0" max="4" />
+              </Form.Item>
+              <Form.Item name="matricula" label="Matrícula">
+                <Input />
               </Form.Item>
             </>
           )}
@@ -405,7 +468,7 @@ export const BecariosPage = () => {
               </tr>
             </thead>
             <tbody>
-              {becarios.map((b, idx) => (
+              {allBecarios.map((b, idx) => (
                 <tr key={b.id || idx}>
                   <td style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px', textAlign: 'center' }}>{idx + 1}</td>
                   <td style={{ border: '1px solid #ddd', padding: '8px', fontSize: '12px', fontWeight: 'bold' }}>

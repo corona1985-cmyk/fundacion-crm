@@ -39,7 +39,10 @@ const FinancieroPage = () => {
       ]);
 
       if (pagosRes.success) setPagos(pagosRes.data?.pagos || []);
-      if (presRes.success) setPresupuestos(presRes.data || []);
+      if (presRes.success) {
+        const payload = presRes.data;
+        setPresupuestos(Array.isArray(payload) ? payload : (payload?.partidas || []));
+      }
       if (resumenRes.success) setResumen(resumenRes.data || {});
       if (becRes.success) setBecarios(becRes.data?.becarios || []);
     } catch (error) {
@@ -139,15 +142,43 @@ const FinancieroPage = () => {
   ];
 
   const presupuestoColumns = [
-    { title: 'Categoría', dataIndex: 'categoria', render: (c) => c.toUpperCase() },
-    { title: 'Año / Mes', key: 'periodo', render: (r) => `${r.anio} / ${r.mes}` },
-    { title: 'Monto Asignado', dataIndex: 'monto_asignado', render: (m) => `RD$ ${parseFloat(m).toLocaleString()}` },
-    { title: 'Monto Ejecutado', dataIndex: 'monto_ejecutado', render: (m) => `RD$ ${parseFloat(m).toLocaleString()}` },
-    { title: 'Disponible', dataIndex: 'disponible', render: (d) => `RD$ ${parseFloat(d).toLocaleString()}` },
+    { title: 'Categoría', dataIndex: 'categoria', render: (c) => String(c || '').toUpperCase() },
+    {
+      title: 'Año / Mes',
+      key: 'periodo',
+      render: (r) => (r.anio ? `${r.anio} / ${r.mes || '—'}` : '2026')
+    },
+    {
+      title: 'Monto Asignado',
+      key: 'asignado',
+      render: (r) => `RD$ ${parseFloat((r.monto_asignado ?? r.asignado) || 0).toLocaleString()}`
+    },
+    {
+      title: 'Monto Ejecutado',
+      key: 'ejecutado',
+      render: (r) => `RD$ ${parseFloat((r.monto_ejecutado ?? r.ejecutado) || 0).toLocaleString()}`
+    },
+    {
+      title: 'Disponible',
+      key: 'disponible',
+      render: (r) => {
+        const asignado = parseFloat((r.monto_asignado ?? r.asignado) || 0);
+        const ejecutado = parseFloat((r.monto_ejecutado ?? r.ejecutado) || 0);
+        const disponible = r.disponible != null ? parseFloat(r.disponible) : asignado - ejecutado;
+        return `RD$ ${disponible.toLocaleString()}`;
+      }
+    },
     {
       title: '% Ejecución',
-      dataIndex: 'porcentaje_ejecucion',
-      render: (pct) => <Progress percent={pct} size="small" status={pct > 100 ? 'exception' : 'active'} />
+      key: 'pct',
+      render: (r) => {
+        const asignado = parseFloat((r.monto_asignado ?? r.asignado) || 0) || 1;
+        const ejecutado = parseFloat((r.monto_ejecutado ?? r.ejecutado) || 0);
+        const pct = r.porcentaje_ejecucion != null
+          ? r.porcentaje_ejecucion
+          : Math.round((ejecutado / asignado) * 100);
+        return <Progress percent={Math.min(pct, 999)} size="small" status={pct > 100 ? 'exception' : 'active'} />;
+      }
     }
   ];
 
@@ -205,10 +236,30 @@ const FinancieroPage = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
         <Title level={3} style={{ margin: 0 }}>Gestión Financiera</Title>
         <Space>
-          <Button icon={<FileExcelOutlined />} onClick={() => reporteApi.exportExcel('financiero')}>
+          <Button
+            icon={<FileExcelOutlined />}
+            onClick={async () => {
+              try {
+                await reporteApi.exportExcel('financiero');
+                message.success('Excel financiero descargado');
+              } catch (error) {
+                message.error(error.message || 'No se pudo exportar el Excel');
+              }
+            }}
+          >
             Excel
           </Button>
-          <Button icon={<FilePdfOutlined />} onClick={() => reporteApi.exportPdf('financiero')}>
+          <Button
+            icon={<FilePdfOutlined />}
+            onClick={async () => {
+              try {
+                await reporteApi.exportPdf('financiero');
+                message.success('PDF financiero descargado');
+              } catch (error) {
+                message.error(error.message || 'No se pudo exportar el PDF');
+              }
+            }}
+          >
             PDF
           </Button>
           {hasRole('ADMINISTRADOR', 'FINANCIERO') && (

@@ -15,7 +15,9 @@ import PadrinoDetailPage from './pages/PadrinoDetailPage';
 import FinancieroPage from './pages/FinancieroPage';
 import AlarmasPage from './pages/AlarmasPage';
 import ReportesPage from './pages/ReportesPage';
+import Reporte101Page from './pages/Reporte101Page';
 import PresupuestoPage from './pages/PresupuestoPage';
+import KanbanPage from './pages/KanbanPage';
 import UsuariosPage from './pages/UsuariosPage';
 import AuditoriaPage from './pages/AuditoriaPage';
 import BotPortalPage from './pages/BotPortalPage';
@@ -36,12 +38,14 @@ function App() {
                   <Route path="/dashboard" element={<DashboardPage />} />
                   <Route path="/becarios" element={<BecariosPage />} />
                   <Route path="/becarios/:id" element={<BecarioDetailPage />} />
+                  <Route path="/kanban" element={<KanbanPage />} />
                   <Route path="/padrinos" element={<PadrinosPage />} />
                   <Route path="/padrinos/:id" element={<PadrinoDetailPage />} />
                   <Route path="/financiero" element={<FinancieroPage />} />
                   <Route path="/presupuesto" element={<PresupuestoPage />} />
                   <Route path="/alarmas" element={<AlarmasPage />} />
                   <Route path="/reportes" element={<ReportesPage />} />
+                  <Route path="/reportes/101" element={<Reporte101Page />} />
                   <Route path="/usuarios" element={<UsuariosPage />} />
                   <Route path="/auditoria" element={<AuditoriaPage />} />
                 </Route>

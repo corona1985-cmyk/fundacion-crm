@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Card, Tag, Button, Typography, Space, message, Modal, Form, Input, Select, Row, Col, Statistic, Tabs, DatePicker } from 'antd';
-import { BellOutlined, CheckCircleOutlined, CloseCircleOutlined, SyncOutlined, AlertOutlined, PlusOutlined, CalendarOutlined, AuditOutlined } from '@ant-design/icons';
+import { BellOutlined, CheckCircleOutlined, CloseCircleOutlined, SyncOutlined, AlertOutlined, PlusOutlined, CalendarOutlined, AuditOutlined, FolderOpenOutlined, ProjectOutlined } from '@ant-design/icons';
 import { alarmaApi } from '../api/alarmaApi';
 import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const { Title, Text } = Typography;
 const { Option } = Select;
@@ -25,6 +26,7 @@ const AlarmasPage = () => {
   const [formDescartar] = Form.useForm();
 
   const { hasRole } = useAuth();
+  const navigate = useNavigate();
 
   const loadData = async () => {
     setLoading(true);
@@ -143,34 +145,45 @@ const AlarmasPage = () => {
       title: 'Acciones',
       key: 'acciones',
       render: (record) => (
-        record.estado === 'pendiente' && hasRole('ADMINISTRADOR', 'COORDINADOR', 'FINANCIERO') ? (
-          <Space>
+        <Space wrap>
+          {record.becario_id && (
             <Button
-              type="primary"
               size="small"
-              icon={<CheckCircleOutlined />}
-              onClick={() => {
-                setSelectedAlarma(record);
-                setAtenderModalVisible(true);
-              }}
+              icon={<FolderOpenOutlined />}
+              onClick={() => navigate(`/becarios/${record.becario_id}`)}
             >
-              Atender
+              Expediente
             </Button>
-            <Button
-              danger
-              size="small"
-              icon={<CloseCircleOutlined />}
-              onClick={() => {
-                setSelectedAlarma(record);
-                setDescartarModalVisible(true);
-              }}
-            >
-              Descartar
-            </Button>
-          </Space>
-        ) : (
-          record.resolucion_nota ? <Text type="secondary">{record.resolucion_nota}</Text> : null
-        )
+          )}
+          {record.estado === 'pendiente' && hasRole('ADMINISTRADOR', 'COORDINADOR', 'FINANCIERO') ? (
+            <>
+              <Button
+                type="primary"
+                size="small"
+                icon={<CheckCircleOutlined />}
+                onClick={() => {
+                  setSelectedAlarma(record);
+                  setAtenderModalVisible(true);
+                }}
+              >
+                Atender
+              </Button>
+              <Button
+                danger
+                size="small"
+                icon={<CloseCircleOutlined />}
+                onClick={() => {
+                  setSelectedAlarma(record);
+                  setDescartarModalVisible(true);
+                }}
+              >
+                Descartar
+              </Button>
+            </>
+          ) : (
+            record.resolucion_nota ? <Text type="secondary">{record.resolucion_nota}</Text> : null
+          )}
+        </Space>
       )
     }
   ];
@@ -183,6 +196,9 @@ const AlarmasPage = () => {
           Centro de Notificaciones y Alarmas
         </Title>
         <Space>
+          <Button icon={<ProjectOutlined />} onClick={() => navigate('/kanban')}>
+            Kanban
+          </Button>
           <Button type="primary" icon={<PlusOutlined />} onClick={() => setCreateModalVisible(true)}>
             Crear Nueva Alarma
           </Button>

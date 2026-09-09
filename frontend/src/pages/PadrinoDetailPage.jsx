@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Card, Descriptions, Tag, Table, Button, Space, Typography, Spin, Modal, Form, InputNumber, Input, Select, DatePicker, message } from 'antd';
-import { ArrowLeftOutlined, PlusOutlined, DollarOutlined } from '@ant-design/icons';
+import { ArrowLeftOutlined, PlusOutlined, DollarOutlined, FilePdfOutlined } from '@ant-design/icons';
 import { padrinoApi } from '../api/padrinoApi';
 import { becarioApi } from '../api/becarioApi';
 import { useAuth } from '../context/AuthContext';
@@ -18,12 +18,33 @@ const PadrinoDetailPage = () => {
   const [aportes, setAportes] = useState([]);
   const [allBecarios, setAllBecarios] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [exporting, setExporting] = useState(false);
 
   // Modals
   const [aporteModalVisible, setAporteModalVisible] = useState(false);
   const [assignModalVisible, setAssignModalVisible] = useState(false);
   const [formAporte] = Form.useForm();
   const [formAssign] = Form.useForm();
+
+  const handleExportCentrosPdf = async () => {
+    setExporting(true);
+    try {
+      const res = await padrinoApi.exportPadrinoCentrosPdf(id);
+      const blob = new Blob([res.data], { type: 'application/pdf' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `Factura_Centros_${displayName || 'Padrino'}.pdf`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      message.success('Factura consolidada por centros descargada con éxito');
+    } catch (error) {
+      message.error('Error al exportar la factura por centros');
+    } finally {
+      setExporting(false);
+    }
+  };
 
   const loadPadrinoDetail = async () => {
     setLoading(true);
@@ -130,6 +151,15 @@ const PadrinoDetailPage = () => {
             <Text type="secondary">Cédula/RNC: {persona.cedula} | Tipo: {padrino.tipo.toUpperCase()}</Text>
           </div>
           <Space>
+            <Button
+              type="primary"
+              danger
+              icon={<FilePdfOutlined />}
+              loading={exporting}
+              onClick={handleExportCentrosPdf}
+            >
+              Exportar Factura por Centros (PDF)
+            </Button>
             <Tag color="green" style={{ fontSize: 14, padding: '4px 12px' }}>
               Total Aportado: RD$ {parseFloat(padrino.total_aportado || 0).toLocaleString()}
             </Tag>
